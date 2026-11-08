@@ -1,0 +1,14 @@
+[
+ {"label":"qwen35-4b-base","tier":"full","repo":"unsloth/Qwen3.5-4B-GGUF","file":"Qwen3.5-4B-Q4_K_M.gguf","bytes":2740937888,"arch":"qwen35"},
+ {"label":"gemma4-e2b-base","tier":"full","repo":"unsloth/gemma-4-E2B-it-GGUF","file":"gemma-4-E2B-it-Q4_K_M.gguf","bytes":3106738272,"arch":"gemma4"},
+ {"label":"nanbeige-3b","tier":"full","repo":"bartowski/Nanbeige_Nanbeige4.2-3B-GGUF","file":"Nanbeige_Nanbeige4.2-3B-Q4_K_M.gguf","bytes":2684023968,"arch":"nanbeige"},
+ {"label":"qwen35-4b-unc","tier":"variant","repo":"HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive","file":"Qwen3.5-4B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf","bytes":2707513696,"arch":"qwen35"},
+ {"label":"gemma4-e2b-unc","tier":"variant","repo":"HauhauCS/Gemma-4-E2B-Uncensored-HauhauCS-Aggressive","file":"Gemma-4-E2B-Uncensored-HauhauCS-Aggressive-Q4_K_P.gguf","bytes":3450277824,"arch":"gemma4"},
+ {"label":"forge-1-e2b","tier":"variant","repo":"YoSaNoo/Forge-1-Gemma-4-E2B","file":"Forge-1-E2B-Q4_K_M.gguf","bytes":3416119936,"arch":"gemma4"},
+ {"label":"gemma4-e4b-base","tier":"full","repo":"unsloth/gemma-4-E4B-it-GGUF","file":"gemma-4-E4B-it-Q4_K_M.gguf","bytes":4977171584,"arch":"gemma4"},
+ {"label":"gemma4-e4b-unc","tier":"variant","repo":"HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive","file":"Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf","bytes":5335285728,"arch":"gemma4"},
+ {"label":"qwen35-9b-base","tier":"full","repo":"unsloth/Qwen3.5-9B-GGUF","file":"Qwen3.5-9B-Q4_K_M.gguf","bytes":5680522464,"arch":"qwen35"},
+ {"label":"deepseek-9b-unc","tier":"variant","repo":"mradermacher/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic-GGUF","file":"DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic.Q4_K_M.gguf","bytes":5629111264,"arch":"qwen35"},
+ {"label":"gemma4-12b-qat","tier":"full","repo":"HauhauCS/Gemma4-12B-QAT-Uncensored-HauhauCS-Balanced","file":"Gemma4-12B-QAT-Uncensored-HauhauCS-Balanced-Q4_K_M.gguf","bytes":7381381760,"arch":"gemma4"},
+ {"label":"bimo-7b","tier":"variant","repo":"mradermacher/Bimo-7B-CyberAgent-GGUF","file":"Bimo-7B-CyberAgent.Q4_K_M.gguf","bytes":4683073696,"arch":"qwen2"}
+]
