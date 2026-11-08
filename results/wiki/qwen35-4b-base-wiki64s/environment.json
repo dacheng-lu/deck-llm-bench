@@ -1,0 +1,20 @@
+{
+  "index": "index/test_embedded_prefix.json",
+  "index_sha256": "7ffd7420a5465d4aa3ee151df92709a5789f418eaab8cb425cd825ffbd8d84a5",
+  "cases": "cases/test.jsonl",
+  "cases_sha256": "09e36d1dd5ee67c53bfbaec945eea81e84702acaa42b9a6513d64c6f3e3753e1",
+  "arms": [
+    "embed"
+  ],
+  "top_k": 5,
+  "prompt_token_budget": 3600,
+  "n_ctx": 4096,
+  "max_tokens": 320,
+  "embedding_model": "nomic-embed-text",
+  "doc_prefix": "search_document: ",
+  "query_prefix": "search_query: ",
+  "lfm_endpoint": "http://127.0.0.1:11437",
+  "scoring": "p0_common.score_case (normalize+articles+numbers+units+aliases+containment)",
+  "created_at": "2026-11-08T21:03:31+0100",
+  "errors": 0
+}

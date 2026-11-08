@@ -1,0 +1,90 @@
+[
+ {
+  "label": "qwen35-4b-base",
+  "tier": "full",
+  "size_gb": 2.74,
+  "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "params": {
+   "ngl": 99,
+   "ctx": 8192,
+   "threads": 4,
+   "load_s": 6.0,
+   "llama_commit": ""
+  },
+  "tg": 20.34,
+  "pp": 184.32,
+  "rss_mb": 290,
+  "wiki": {
+   "n": 64,
+   "answer_ok": 0.2812,
+   "answer_correct_answerable": 0.6346,
+   "citation_ok": 0.25,
+   "citation_lenient": 0.5962,
+   "abstention_ok_unanswerable": 0.5833,
+   "mean_latency_s": 19.9284
+  },
+  "wiki_score": 21.81,
+  "scores": {
+   "if": 15.0,
+   "json": 18.0,
+   "tool": 5.0,
+   "niah": 15.0,
+   "speed": 10.0
+  },
+  "total": 84.81,
+  "gates": {
+   "tg_ge_5": true,
+   "wiki_answer_ge_50": true,
+   "wiki_citation_ge_60": false,
+   "json_ge_9": true,
+   "niah4k_ge_4": true,
+   "rss_le_10_5_gb": true
+  },
+  "all_gates": false,
+  "elapsed_s": 187.4
+ },
+ {
+  "label": "gemma4-e2b-base",
+  "tier": "full",
+  "size_gb": 3.11,
+  "sha256": "740185b21d22ceb83a11c3aa62ad5842ef32c70f6096d756bbee85a1e4ec34b8",
+  "params": {
+   "ngl": 99,
+   "ctx": 8192,
+   "threads": 4,
+   "load_s": 10.0,
+   "llama_commit": ""
+  },
+  "tg": 31.35,
+  "pp": 346.35,
+  "rss_mb": 238,
+  "wiki": {
+   "n": 64,
+   "answer_ok": 0.1562,
+   "answer_correct_answerable": 0.6731,
+   "citation_ok": 0.25,
+   "citation_lenient": 0.2692,
+   "abstention_ok_unanswerable": 0.0,
+   "mean_latency_s": 14.4916
+  },
+  "wiki_score": 19.32,
+  "scores": {
+   "if": 11.25,
+   "json": 8.0,
+   "tool": 3.5,
+   "niah": 15.0,
+   "speed": 10.0
+  },
+  "total": 67.07,
+  "gates": {
+   "tg_ge_5": true,
+   "wiki_answer_ge_50": true,
+   "wiki_citation_ge_60": false,
+   "json_ge_9": false,
+   "niah4k_ge_4": true,
+   "rss_le_10_5_gb": true
+  },
+  "all_gates": false,
+  "elapsed_s": 161.5
+ }
+]
