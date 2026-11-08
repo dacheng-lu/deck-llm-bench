@@ -37,6 +37,15 @@ Gates: loads at 8K; tg ≥ 5 tok/s; wiki answer ≥ 50% and citation ≥ 60%;
 JSON ≥ 9/10; 4K needle ≥ 4/5; peak RSS ≤ 10.5 GB with no swap. A failed or
 timed-out run is reported as NOT-RUN and stays in the denominator.
 
+## Pre-registration
+
+The 64-case wiki subset is every third case of `cases/test.jsonl` (64 of 193,
+covering all eight domains; `sha256` of the newline-joined case IDs is
+`7504b6370c29457d3b54e6952df2124631afccb864c9df45bb7714d1597e904e`). The main
+queue runs the 4K needle test only; an 8K pass is run separately for finalists
+because the 4 GB VRAM carveout plus resident download cache evicts model pages
+and thrashes.
+
 ## Results
 
 Filled by `scripts/aggregate.py` after the queue finishes; see
