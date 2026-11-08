@@ -1,0 +1,12 @@
+[
+ {"invoice": "INV-1042", "vendor": "Acme GmbH", "date": "2026-03-04", "total": 1299.5, "category": "hardware"},
+ {"invoice": "INV-2087", "vendor": "Northwind Ltd", "date": "2026-04-12", "total": 87.25, "category": "software"},
+ {"invoice": "INV-3311", "vendor": "Contoso AG", "date": "2026-05-30", "total": 450.0, "category": "services"},
+ {"invoice": "INV-4420", "vendor": "Globex Inc", "date": "2026-06-18", "total": 12.99, "category": "hardware"},
+ {"invoice": "INV-5502", "vendor": "Initech", "date": "2026-07-01", "total": 2300.75, "category": "services"},
+ {"invoice": "INV-6614", "vendor": "Umbrella KG", "date": "2026-08-09", "total": 64.4, "category": "software"},
+ {"invoice": "INV-7721", "vendor": "Soylent LLC", "date": "2026-09-23", "total": 999.99, "category": "hardware"},
+ {"invoice": "INV-8830", "vendor": "Hooli", "date": "2026-10-05", "total": 310.1, "category": "services"},
+ {"invoice": "INV-9940", "vendor": "Vandelay", "date": "2026-10-31", "total": 5.5, "category": "software"},
+ {"invoice": "INV-1055", "vendor": "Wayne Enterprises", "date": "2026-11-02", "total": 780.0, "category": "services"}
+]

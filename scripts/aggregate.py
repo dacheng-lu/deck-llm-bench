@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 BENCH = Path.home() / "deck-bench"
+DOCS = json.loads((Path(__file__).resolve().parent / "docs.json").read_text())
 PILOT = Path.home() / "deck-rag/pilot3/runs"
 TIER = {
     "qwen35-4b-base": "full", "gemma4-e2b-base": "full", "nanbeige-3b": "full",
@@ -14,29 +15,58 @@ TIER = {
 }
 
 
+def check_json(output, doc):
+    import re
+    try:
+        obj = json.loads(re.search(r"\{.*\}", output, re.S).group())
+    except Exception:
+        return False
+    if set(obj) != set(doc):
+        return False
+    for k, want in doc.items():
+        got = obj.get(k)
+        if isinstance(want, (int, float)):
+            try:
+                num = re.sub(r"[^0-9.\-]", "", str(got))
+                if abs(float(num) - float(want)) > 1e-6:
+                    return False
+            except ValueError:
+                return False
+        elif str(got).strip() != str(want).strip():
+            return False
+    return True
+
+
 def main():
     rows = []
     for extra_path in sorted((BENCH / "results").glob("*-extra.json")):
         e = json.loads(extra_path.read_text())
         label = e["label"]
-        mpath = PILOT / f"{label}-wiki64/metrics.json"
+        mpath = PILOT / f"{label}-wiki64s/metrics.json"
         wiki = None
         if mpath.exists():
             m = json.loads(mpath.read_text()).get("embed", {})
             wiki = {"n": m.get("n"), "answer_ok": m.get("answer_ok"),
-                    "citation_ok": m.get("citation_ok"),
+                    "answer_correct_answerable": m.get("answer_correct_answerable"),
+                    "citation_ok": m.get("citation_ok_answerable"),
+                    "citation_lenient": m.get("citation_ok_lenient_answerable"),
+                    "abstention_ok_unanswerable": m.get("abstention_ok_unanswerable"),
                     "mean_latency_s": m.get("mean_latency_s")}
-        s = e.get("scores", {})
+        s = dict(e.get("scores", {}))
+        jrows = sorted(e.get("tasks", {}).get("json", []), key=lambda r: r["id"])
+        jok = sum(check_json(r.get("output", ""), d) for r, d in zip(jrows, DOCS))
+        s["json"] = round(jok / len(DOCS) * 20, 2)
         wiki_score = 0.0
         if wiki and wiki.get("answer_ok") is not None:
-            wiki_score = 35.0 * (0.7 * wiki["answer_ok"] + 0.3 * (wiki.get("citation_ok") or 0))
+            wiki_score = 35.0 * (0.7 * (wiki.get("answer_correct_answerable") or 0)
+                                 + 0.3 * (wiki.get("citation_lenient") or 0))
         total = sum(v for k, v in s.items() if isinstance(v, (int, float))) + wiki_score
         niah4 = e.get("tasks", {}).get("niah4k", [])
-        json_ok = sum(1 for r in e.get("tasks", {}).get("json", []) if r.get("ok"))
+        json_ok = jok
         gates = {
             "tg_ge_5": (e.get("tasks", {}).get("speed4k", {}).get("tg") or 0) >= 5,
-            "wiki_answer_ge_50": bool(wiki and (wiki.get("answer_ok") or 0) >= 0.5),
-            "wiki_citation_ge_60": bool(wiki and (wiki.get("citation_ok") or 0) >= 0.6),
+            "wiki_answer_ge_50": bool(wiki and (wiki.get("answer_correct_answerable") or 0) >= 0.5),
+            "wiki_citation_ge_60": bool(wiki and (wiki.get("citation_lenient") or 0) >= 0.6),
             "json_ge_9": json_ok >= 9,
             "niah4k_ge_4": sum(1 for r in niah4 if r.get("ok")) >= 4,
             "rss_le_10_5_gb": (e.get("tasks", {}).get("speed4k", {}).get("rss_mb") or 999999) <= 10752,
@@ -61,7 +91,8 @@ def main():
                     "wiki_cit", "if", "json", "tool", "niah", "speed", "wiki", "total", "all_gates"])
         for i, r in enumerate(rows, 1):
             w.writerow([i, r["label"], r["tier"], r["size_gb"], r["tg"], r["rss_mb"],
-                        (r["wiki"] or {}).get("answer_ok"), (r["wiki"] or {}).get("citation_ok"),
+                        (r["wiki"] or {}).get("answer_correct_answerable"),
+                        (r["wiki"] or {}).get("citation_lenient"),
                         r["scores"].get("if"), r["scores"].get("json"), r["scores"].get("tool"),
                         r["scores"].get("niah"), r["scores"].get("speed"),
                         r["wiki_score"], r["total"], r["all_gates"]])
@@ -74,7 +105,7 @@ def main():
     for i, r in enumerate(rows, 1):
         wiki = r["wiki"] or {}
         lines.append(f"| {i} | {r['label']} | {r['tier']} | {r['size_gb']} | {r['tg']} | "
-                     f"{wiki.get('answer_ok')} | {wiki.get('citation_ok')} | {r['total']} | "
+                     f"{wiki.get('answer_correct_answerable')} | {wiki.get('citation_lenient')} | {r['total']} | "
                      f"{'PASS' if r['all_gates'] else 'FAIL'} |")
     (BENCH / "results/REPORT.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
