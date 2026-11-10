@@ -54,6 +54,7 @@ Raw data:
 - `results/deck/sweep-scores.json`: Deck 64-case wiki runs.
 - `results/pc/laptop-scores.json`: 2026-11-10 PC sweep.
 - `results/pc/run.log`: PC queue timeline.
+- `results/pc/README.md`: PC run notes and field definitions.
 
 The older `results/summary.json` only covers the first two completed Deck models;
 do not treat it as the final aggregate.
