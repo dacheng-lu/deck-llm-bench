@@ -1,0 +1,242 @@
+{
+ "label": "bimo-7b",
+ "file": "/home/dav-sd/models/bench5/Bimo-7B-CyberAgent-Q4_K_M.gguf",
+ "tier": "variant",
+ "params": {
+  "ngl": 24,
+  "ctx": 8192,
+  "threads": 4,
+  "load_s": 10.0,
+  "llama_commit": ""
+ },
+ "sha256": "623c5868423f6fead2169800b3495611c979ecec346f3f999fb3a62735e8124a",
+ "size_gb": 4.68,
+ "tasks": {
+  "speed4k": {
+   "depth_tokens": 3165,
+   "pp": 121.94,
+   "tg": 7.46,
+   "rss_mb": 223
+  },
+  "if": [
+   {
+    "id": "if-exact-en",
+    "ok": true,
+    "output": "OK",
+    "wall": 1.3
+   },
+   {
+    "id": "if-arith",
+    "ok": true,
+    "output": "391",
+    "wall": 1.19
+   },
+   {
+    "id": "if-zh-capital",
+    "ok": true,
+    "output": "\u5df4\u9ece",
+    "wall": 0.94
+   },
+   {
+    "id": "if-de-exact",
+    "ok": true,
+    "output": "Berlin",
+    "wall": 0.78
+   },
+   {
+    "id": "if-translate",
+    "ok": true,
+    "output": "Guten Morgen",
+    "wall": 1.45
+   },
+   {
+    "id": "if-json",
+    "ok": false,
+    "output": "```json\n{\"name\": \"Bimo\", \"type\": \"autonomous cybersecurity agent\", \"specialization\": [\"ethical security auditing\", \"vulnerability research\"], \"functionality\": [\"native JSON function calling\"], \"capabilities\": [\"multi-turn tool execution\"]}}\n```",
+    "wall": 6.44
+   },
+   {
+    "id": "if-list",
+    "ok": false,
+    "output": "Red, Green, Blue",
+    "wall": 1.38
+   },
+   {
+    "id": "if-summary",
+    "ok": false,
+    "output": "The Steam Deck is a handheld gaming computer running Linux that can also execute local language models.",
+    "wall": 2.51
+   }
+  ],
+  "json": [
+   {
+    "id": "json-01",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-1042\",\n  \"vendor\": \"Acme GmbH\",\n  \"date\": \"2026-03-04\",\n  \"total\": \"EUR 1299.50\",\n  \"category\": \"hardware\"\n}\n```",
+    "wall": 7.72
+   },
+   {
+    "id": "json-02",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-2087\",\n  \"vendor\": \"Northwind Ltd\",\n  \"date\": \"2026-04-12\",\n  \"total\": \"EUR 87.25\",\n  \"category\": \"software\"\n}\n```",
+    "wall": 7.09
+   },
+   {
+    "id": "json-03",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-3311\",\n  \"vendor\": \"Contoso AG\",\n  \"date\": \"2026-05-30\",\n  \"total\": \"EUR 450.00\",\n  \"category\": \"services\"\n}\n```",
+    "wall": 7.21
+   },
+   {
+    "id": "json-04",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-4420\",\n  \"vendor\": \"Globex Inc\",\n  \"date\": \"2026-06-18\",\n  \"total\": \"EUR 12.99\",\n  \"category\": \"hardware\"\n}\n```",
+    "wall": 7.22
+   },
+   {
+    "id": "json-05",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-5502\",\n  \"vendor\": \"Initech\",\n  \"date\": \"2026-07-01\",\n  \"total\": \"EUR 2300.75\",\n  \"category\": \"services\"\n}\n```",
+    "wall": 7.26
+   },
+   {
+    "id": "json-06",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-6614\",\n  \"vendor\": \"Umbrella KG\",\n  \"date\": \"2026-08-09\",\n  \"total\": \"EUR 64.40\",\n  \"category\": \"software\"\n}\n```",
+    "wall": 7.68
+   },
+   {
+    "id": "json-07",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-7721\",\n  \"vendor\": \"Soylent LLC\",\n  \"date\": \"2026-09-23\",\n  \"total\": \"EUR 999.99\",\n  \"category\": \"hardware\"\n}\n```",
+    "wall": 7.69
+   },
+   {
+    "id": "json-08",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-8830\",\n  \"vendor\": \"Hooli\",\n  \"date\": \"2026-10-05\",\n  \"total\": \"EUR 310.10\",\n  \"category\": \"services\"\n}\n```",
+    "wall": 7.38
+   },
+   {
+    "id": "json-09",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-9940\",\n  \"vendor\": \"Vandelay\",\n  \"date\": \"2026-10-31\",\n  \"total\": \"EUR 5.50\",\n  \"category\": \"software\"\n}\n```",
+    "wall": 7.16
+   },
+   {
+    "id": "json-10",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-1055\",\n  \"vendor\": \"Wayne Enterprises\",\n  \"date\": \"2026-11-02\",\n  \"total\": \"EUR 780.00\",\n  \"category\": \"services\"\n}\n```",
+    "wall": 7.46
+   }
+  ],
+  "tool": [
+   {
+    "id": "tool-01",
+    "ok": true,
+    "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Berlin\"}}",
+    "wall": 2.82
+   },
+   {
+    "id": "tool-02",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"Steam Deck OLED reviews\"}}",
+    "wall": 2.76
+   },
+   {
+    "id": "tool-03",
+    "ok": true,
+    "output": "{\"tool\": \"read_file\", \"arguments\": {\"path\": \"/tmp/notes.txt\"}}",
+    "wall": 2.82
+   },
+   {
+    "id": "tool-04",
+    "ok": true,
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"a@example.com\", \"subject\": \"Report\"}}",
+    "wall": 3.79
+   },
+   {
+    "id": "tool-05",
+    "ok": true,
+    "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}",
+    "wall": 2.72
+   },
+   {
+    "id": "tool-06",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"llama.cpp RPC benchmarks\"}}",
+    "wall": 2.95
+   },
+   {
+    "id": "tool-07",
+    "ok": true,
+    "output": "{\"tool\": \"read_file\", \"arguments\": {\"path\": \"/etc/hostname\"}}",
+    "wall": 2.75
+   },
+   {
+    "id": "tool-08",
+    "ok": true,
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"bob@example.org\", \"subject\": \"Invoice\"}}",
+    "wall": 3.34
+   },
+   {
+    "id": "tool-09",
+    "ok": true,
+    "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Paris\"}}",
+    "wall": 2.56
+   },
+   {
+    "id": "tool-10",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"Qwen3.5 9B GGUF\"}}",
+    "wall": 3.67
+   }
+  ],
+  "niah4k": [
+   {
+    "id": "niah-3500-ORBITAL-7",
+    "ok": true,
+    "output": "The access code for ORBITAL-7 is Q7-4419.",
+    "wall": 30.13
+   },
+   {
+    "id": "niah-3500-HALCYON-3",
+    "ok": true,
+    "output": "The access code for HALCYON-3 is K3-8820.",
+    "wall": 26.19
+   },
+   {
+    "id": "niah-3500-MERIDIAN-9",
+    "ok": true,
+    "output": "The access code for MERIDIAN-9 is M9-1274.",
+    "wall": 20.39
+   },
+   {
+    "id": "niah-3500-CASCADE-5",
+    "ok": true,
+    "output": "The access code for CASCADE-5 is R2-6631.",
+    "wall": 16.06
+   },
+   {
+    "id": "niah-3500-TUNDRA-2",
+    "ok": true,
+    "output": "The access code for TUNDRA-2 is T5-9084.",
+    "wall": 10.7
+   }
+  ]
+ },
+ "scores": {
+  "if": 9.38,
+  "json": 0.0,
+  "tool": 5.0,
+  "niah": 15.0,
+  "speed": 9.32
+ },
+ "gates": {
+  "tg_ge_5": true,
+  "json_ge_9": false,
+  "niah4k_ge_4": true,
+  "rss_le_10_5_gb": true
+ },
+ "elapsed_s": 274.1
+}

@@ -1,0 +1,242 @@
+{
+ "label": "qwen35-9b-base",
+ "file": "/home/dav-sd/models/bench5/Qwen3.5-9B-Q4_K_M.gguf",
+ "tier": "full",
+ "params": {
+  "ngl": 8,
+  "ctx": 8192,
+  "threads": 4,
+  "load_s": 14.0,
+  "llama_commit": ""
+ },
+ "sha256": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+ "size_gb": 5.68,
+ "tasks": {
+  "speed4k": {
+   "depth_tokens": 3196,
+   "pp": 85.65,
+   "tg": 3.72,
+   "rss_mb": 675
+  },
+  "if": [
+   {
+    "id": "if-exact-en",
+    "ok": true,
+    "output": "OK",
+    "wall": 7.9
+   },
+   {
+    "id": "if-arith",
+    "ok": true,
+    "output": "391",
+    "wall": 8.88
+   },
+   {
+    "id": "if-zh-capital",
+    "ok": true,
+    "output": "\u6cd5\u56fd\u7684\u9996\u90fd\u662f\u5df4\u9ece\u3002",
+    "wall": 9.55
+   },
+   {
+    "id": "if-de-exact",
+    "ok": true,
+    "output": "Berlin",
+    "wall": 7.71
+   },
+   {
+    "id": "if-translate",
+    "ok": true,
+    "output": "Guten Morgen",
+    "wall": 9.42
+   },
+   {
+    "id": "if-json",
+    "ok": true,
+    "output": "{\"a\": 1, \"b\": 2}",
+    "wall": 11.18
+   },
+   {
+    "id": "if-list",
+    "ok": false,
+    "output": "Red, Green, Blue",
+    "wall": 3.45
+   },
+   {
+    "id": "if-summary",
+    "ok": true,
+    "output": "The Valve Steam Deck is a Linux-based handheld gaming computer capable of running local language models.",
+    "wall": 6.03
+   }
+  ],
+  "json": [
+   {
+    "id": "json-01",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-1042\", \"vendor\": \"Acme GmbH\", \"date\": \"2026-03-04\", \"total\": \"EUR 1299.50\", \"category\": \"hardware\"}",
+    "wall": 15.28
+   },
+   {
+    "id": "json-02",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-2087\", \"vendor\": \"Northwind Ltd\", \"date\": \"2026-04-12\", \"total\": \"EUR 87.25\", \"category\": \"software\"}",
+    "wall": 14.82
+   },
+   {
+    "id": "json-03",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-3311\", \"vendor\": \"Contoso AG\", \"date\": \"2026-05-30\", \"total\": \"EUR 450.00\", \"category\": \"services\"}",
+    "wall": 15.04
+   },
+   {
+    "id": "json-04",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-4420\", \"vendor\": \"Globex Inc\", \"date\": \"2026-06-18\", \"total\": \"EUR 12.99\", \"category\": \"hardware\"}",
+    "wall": 18.24
+   },
+   {
+    "id": "json-05",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-5502\", \"vendor\": \"Initech\", \"date\": \"2026-07-01\", \"total\": \"EUR 2300.75\", \"category\": \"services\"}",
+    "wall": 18.77
+   },
+   {
+    "id": "json-06",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-6614\", \"vendor\": \"Umbrella KG\", \"date\": \"2026-08-09\", \"total\": \"EUR 64.40\", \"category\": \"software\"}",
+    "wall": 18.96
+   },
+   {
+    "id": "json-07",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-7721\", \"vendor\": \"Soylent LLC\", \"date\": \"2026-09-23\", \"total\": \"EUR 999.99\", \"category\": \"hardware\"}",
+    "wall": 18.8
+   },
+   {
+    "id": "json-08",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-8830\", \"vendor\": \"Hooli\", \"date\": \"2026-10-05\", \"total\": \"EUR 310.10\", \"category\": \"services\"}",
+    "wall": 15.75
+   },
+   {
+    "id": "json-09",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-9940\", \"vendor\": \"Vandelay\", \"date\": \"2026-10-31\", \"total\": \"EUR 5.50\", \"category\": \"software\"}",
+    "wall": 14.61
+   },
+   {
+    "id": "json-10",
+    "ok": false,
+    "output": "{\"invoice\": \"INV-1055\", \"vendor\": \"Wayne Enterprises\", \"date\": \"2026-11-02\", \"total\": \"EUR 780.00\", \"category\": \"services\"}",
+    "wall": 14.96
+   }
+  ],
+  "tool": [
+   {
+    "id": "tool-01",
+    "ok": true,
+    "output": "{\n  \"tool\": \"get_weather\",\n  \"arguments\": {\n    \"city\": \"Berlin\"\n  }\n}",
+    "wall": 9.49
+   },
+   {
+    "id": "tool-02",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"Steam Deck OLED reviews\"}}",
+    "wall": 7.36
+   },
+   {
+    "id": "tool-03",
+    "ok": true,
+    "output": "{\"tool\": \"read_file\", \"arguments\": {\"path\": \"/tmp/notes.txt\"}}",
+    "wall": 10.06
+   },
+   {
+    "id": "tool-04",
+    "ok": true,
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"a@example.com\", \"subject\": \"Report\"}}",
+    "wall": 11.54
+   },
+   {
+    "id": "tool-05",
+    "ok": true,
+    "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}",
+    "wall": 9.74
+   },
+   {
+    "id": "tool-06",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"llama.cpp RPC benchmarks\"}}",
+    "wall": 10.96
+   },
+   {
+    "id": "tool-07",
+    "ok": true,
+    "output": "{\"tool\": \"read_file\", \"arguments\": {\"path\": \"/etc/hostname\"}}",
+    "wall": 9.79
+   },
+   {
+    "id": "tool-08",
+    "ok": true,
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"bob@example.org\", \"subject\": \"Invoice\"}}",
+    "wall": 11.76
+   },
+   {
+    "id": "tool-09",
+    "ok": true,
+    "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Paris\"}}",
+    "wall": 9.83
+   },
+   {
+    "id": "tool-10",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"Qwen3.5 9B GGUF\"}}",
+    "wall": 8.43
+   }
+  ],
+  "niah4k": [
+   {
+    "id": "niah-3500-ORBITAL-7",
+    "ok": true,
+    "output": "Q7-4419",
+    "wall": 39.06
+   },
+   {
+    "id": "niah-3500-HALCYON-3",
+    "ok": true,
+    "output": "K3-8820",
+    "wall": 49.02
+   },
+   {
+    "id": "niah-3500-MERIDIAN-9",
+    "ok": true,
+    "output": "M9-1274",
+    "wall": 43.93
+   },
+   {
+    "id": "niah-3500-CASCADE-5",
+    "ok": true,
+    "output": "R2-6631",
+    "wall": 41.66
+   },
+   {
+    "id": "niah-3500-TUNDRA-2",
+    "ok": true,
+    "output": "T5-9084",
+    "wall": 49.57
+   }
+  ]
+ },
+ "scores": {
+  "if": 13.12,
+  "json": 0.0,
+  "tool": 5.0,
+  "niah": 15.0,
+  "speed": 4.65
+ },
+ "gates": {
+  "tg_ge_5": false,
+  "json_ge_9": false,
+  "niah4k_ge_4": true,
+  "rss_le_10_5_gb": true
+ },
+ "elapsed_s": 633.4
+}

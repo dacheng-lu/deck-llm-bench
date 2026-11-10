@@ -48,8 +48,90 @@ and thrashes.
 
 ## Results
 
-Filled by `scripts/aggregate.py` after the queue finishes; see
-`results/REPORT.md`, `results/summary.json` and `results/summary.csv`.
+Raw data:
+
+- `results/deck/extras/`: 11 Deck component records plus the 12B load failure.
+- `results/deck/sweep-scores.json`: Deck 64-case wiki runs.
+- `results/pc/laptop-scores.json`: 2026-11-10 PC sweep.
+- `results/pc/run.log`: PC queue timeline.
+
+The older `results/summary.json` only covers the first two completed Deck models;
+do not treat it as the final aggregate.
+
+### PC run, 2026-11-10
+
+Hardware: i5-12500H, 15 GiB RAM, RTX 3050 Mobile 4 GB, Vulkan backend. Same
+frozen 64-case wiki subset and the same deterministic scorer. The 12B model
+timed out after 52 of 64 responses; its row is partial and must not be ranked
+against complete runs.
+
+| model | n | answerable n | answer ok | citation ok | valid JSON | p50 s | mean s |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `gemma4-12b-qat` | 52/64 | 42 | 66.7% | 73.8% | 100.0% | 318.46 | 269.76 |
+| `gemma4-e2b-base` | 64/64 | 52 | 51.9% | 65.4% | 100.0% | 0.82 | 1.11 |
+| `gemma4-e4b-base` | 64/64 | 52 | 51.9% | 59.6% | 100.0% | 2.63 | 2.67 |
+| `deepseek-9b-unc` | 64/64 | 52 | 51.9% | 55.8% | 100.0% | 7.28 | 7.38 |
+| `qwen35-4b-base` | 64/64 | 52 | 50.0% | 57.7% | 98.4% | 3.02 | 3.19 |
+| `qwen35-9b-base` | 64/64 | 52 | 50.0% | 55.8% | 100.0% | 7.26 | 7.31 |
+| `qwen35-4b-unc` | 64/64 | 52 | 48.1% | 55.8% | 100.0% | 3.24 | 3.23 |
+| `gemma4-e4b-unc` | 64/64 | 52 | 48.1% | 53.8% | 100.0% | 2.55 | 2.67 |
+| `forge-1-e2b` | 64/64 | 52 | 46.2% | 59.6% | 96.9% | 0.80 | 0.96 |
+| `nanbeige-3b` | 64/64 | 52 | 44.2% | 55.8% | 100.0% | 9.69 | 10.91 |
+| `gemma4-e2b-unc` | 64/64 | 52 | 38.5% | 50.0% | 100.0% | 0.79 | 0.81 |
+| `lfm3-1.7b` | 64/64 | 52 | 36.5% | 51.9% | 76.6% | 1.04 | 1.40 |
+| `bimo-7b` | 64/64 | 52 | 0.0% | 0.0% | 4.7% | 6.26 | 6.41 |
+
+`bimo-7b` completes every request but produces almost no valid JSON and no
+correct answers. That is a template/output-format failure in this harness, not
+evidence that the model is generally useless; do not use its row as a quality
+ranking.
+
+### PC vs Deck, 64-case wiki
+
+Only models with 64/64 wiki responses on both machines are shown. Δ is PC minus
+Deck in percentage points. Latency is single-run p50 and includes the different
+hardware and backends, so it is a deployment signal, not a model-only metric.
+
+| model | PC ans | Deck ans | Δ pp | PC cite | Deck cite | Δ pp | PC p50 | Deck p50 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `gemma4-e2b-base` | 51.9% | 50.0% | +1.9 | 65.4% | 63.5% | +1.9 | 0.82s | 8.92s |
+| `qwen35-4b-base` | 50.0% | 50.0% | +0.0 | 57.7% | 59.6% | -1.9 | 3.02s | 19.18s |
+| `qwen35-4b-unc` | 48.1% | 48.1% | +0.0 | 55.8% | 55.8% | +0.0 | 3.24s | 18.77s |
+| `forge-1-e2b` | 46.2% | 46.2% | +0.0 | 59.6% | 59.6% | +0.0 | 0.80s | 8.94s |
+| `nanbeige-3b` | 44.2% | 42.3% | +1.9 | 55.8% | 53.8% | +2.0 | 9.69s | 31.50s |
+| `gemma4-e2b-unc` | 38.5% | 40.4% | -1.9 | 50.0% | 51.9% | -1.9 | 0.79s | 8.95s |
+
+The quality deltas are small. The large latency gap is expected: the PC runs
+on a discrete GPU, the Deck on a 4 GB carveout. The Deck runs below are partial
+and are not included in the comparison: `bimo-7b` 31/64, `deepseek-9b-unc` 4/64,
+`gemma4-e4b-base` 47/64, `gemma4-e4b-unc` 43/64, `qwen35-9b-base` 17/64,
+`gemma4-12b-qat` 0/64.
+
+### Deck component scores
+
+Raw deterministic components. These `gates` are the component gates only
+(`tg`, `json`, `niah`, `rss`); the wiki gates live in the wiki records, not in
+this table.
+
+| model | IF/15 | JSON/20 | tool/5 | NIAH/15 | speed/10 | tg/s | component gates |
+|---|---:|---:|---:|---:|---:|---:|---|
+| `bimo-7b` | 9.38 | 0.00 | 5.00 | 15.00 | 9.32 | 7.46 | FAIL |
+| `deepseek-9b-unc` | 13.12 | 0.00 | 5.00 | 15.00 | 4.89 | 3.91 | FAIL |
+| `forge-1-e2b` | 15.00 | 0.00 | 5.00 | 15.00 | 10.00 | 32.19 | FAIL |
+| `gemma4-e2b-base` | 15.00 | 4.00 | 5.00 | 15.00 | 10.00 | 33.01 | FAIL |
+| `gemma4-e2b-unc` | 15.00 | 0.00 | 5.00 | 15.00 | 10.00 | 32.39 | FAIL |
+| `gemma4-e4b-base` | 15.00 | 0.00 | 5.00 | 15.00 | 4.59 | 3.67 | FAIL |
+| `gemma4-e4b-unc` | 15.00 | 0.00 | 5.00 | 15.00 | 4.66 | 3.73 | FAIL |
+| `nanbeige-3b` | 13.12 | 2.00 | 5.00 | 15.00 | 10.00 | 13.36 | FAIL |
+| `qwen35-4b-base` | 15.00 | 18.00 | 5.00 | 15.00 | 10.00 | 20.34 | PASS |
+| `qwen35-4b-unc` | 15.00 | 20.00 | 5.00 | 15.00 | 10.00 | 20.67 | PASS |
+| `qwen35-9b-base` | 13.12 | 0.00 | 5.00 | 15.00 | 4.65 | 3.72 | FAIL |
+| `gemma4-12b-qat` | — | — | — | — | — | — | NOT-RUN |
+
+Only the two Qwen 3.5 4B models pass every component gate. The JSON column is
+the main separator: most runs fail the strict 9/10 gate even when their prose
+answers look reasonable.
+
 
 ## Reproduce
 
@@ -68,8 +150,8 @@ pilot3 `runs/<label>-wiki64/` directory.
 
 - One Deck, one run per model, temperature 0. Latency is single-sample and
   includes WiFi/download contention.
-- The 64-case wiki subset is pre-registered by taking the first 64 cases of the
-  pilot3 test file; the 193-case set is run only for finalists.
+- The 64-case wiki subset is pre-registered as every third case of the pilot3
+  test file; the 193-case set is run only for finalists.
 - Q4_K_M (and Q4_K_P for one model) is a memory-driven choice, not an
   apples-to-apples quality comparison with larger quants.
 - No model judges another model. Every score above comes from a deterministic

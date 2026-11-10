@@ -1,0 +1,145 @@
+[
+ {
+  "run": "bimo-7b",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.0,
+  "citation_ok": 0.0,
+  "valid_json": 0.047,
+  "lat_mean_s": 6.41,
+  "lat_p50_s": 6.26,
+  "prompt_tokens_mean": 3032
+ },
+ {
+  "run": "deepseek-9b-unc",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.519,
+  "citation_ok": 0.558,
+  "valid_json": 1.0,
+  "lat_mean_s": 7.38,
+  "lat_p50_s": 7.28,
+  "prompt_tokens_mean": 3050
+ },
+ {
+  "run": "forge-1-e2b",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.462,
+  "citation_ok": 0.596,
+  "valid_json": 0.969,
+  "lat_mean_s": 0.96,
+  "lat_p50_s": 0.8,
+  "prompt_tokens_mean": 2990
+ },
+ {
+  "run": "gemma4-12b-qat",
+  "responses": 52,
+  "answerable_n": 42,
+  "answer_ok": 0.667,
+  "citation_ok": 0.738,
+  "valid_json": 1.0,
+  "lat_mean_s": 269.76,
+  "lat_p50_s": 318.46,
+  "prompt_tokens_mean": 2977
+ },
+ {
+  "run": "gemma4-e2b-base",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.519,
+  "citation_ok": 0.654,
+  "valid_json": 1.0,
+  "lat_mean_s": 1.11,
+  "lat_p50_s": 0.82,
+  "prompt_tokens_mean": 2990
+ },
+ {
+  "run": "gemma4-e2b-unc",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.385,
+  "citation_ok": 0.5,
+  "valid_json": 1.0,
+  "lat_mean_s": 0.81,
+  "lat_p50_s": 0.79,
+  "prompt_tokens_mean": 2990
+ },
+ {
+  "run": "gemma4-e4b-base",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.519,
+  "citation_ok": 0.596,
+  "valid_json": 1.0,
+  "lat_mean_s": 2.67,
+  "lat_p50_s": 2.63,
+  "prompt_tokens_mean": 2990
+ },
+ {
+  "run": "gemma4-e4b-unc",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.481,
+  "citation_ok": 0.538,
+  "valid_json": 1.0,
+  "lat_mean_s": 2.67,
+  "lat_p50_s": 2.55,
+  "prompt_tokens_mean": 2990
+ },
+ {
+  "run": "lfm3-1.7b",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.365,
+  "citation_ok": 0.519,
+  "valid_json": 0.766,
+  "lat_mean_s": 1.4,
+  "lat_p50_s": 1.04,
+  "prompt_tokens_mean": 2980
+ },
+ {
+  "run": "nanbeige-3b",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.442,
+  "citation_ok": 0.558,
+  "valid_json": 1.0,
+  "lat_mean_s": 10.91,
+  "lat_p50_s": 9.69,
+  "prompt_tokens_mean": 3081
+ },
+ {
+  "run": "qwen35-4b-base",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.5,
+  "citation_ok": 0.577,
+  "valid_json": 0.984,
+  "lat_mean_s": 3.19,
+  "lat_p50_s": 3.02,
+  "prompt_tokens_mean": 3050
+ },
+ {
+  "run": "qwen35-4b-unc",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.481,
+  "citation_ok": 0.558,
+  "valid_json": 1.0,
+  "lat_mean_s": 3.23,
+  "lat_p50_s": 3.24,
+  "prompt_tokens_mean": 3050
+ },
+ {
+  "run": "qwen35-9b-base",
+  "responses": 64,
+  "answerable_n": 52,
+  "answer_ok": 0.5,
+  "citation_ok": 0.558,
+  "valid_json": 1.0,
+  "lat_mean_s": 7.31,
+  "lat_p50_s": 7.26,
+  "prompt_tokens_mean": 3050
+ }
+]

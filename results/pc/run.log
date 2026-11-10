@@ -1,0 +1,31 @@
+2026-11-09T20:37:12+01:00 waiting for 12 GGUFs
+2026-11-10T01:10:17+01:00 downloads complete
+2026-11-10T01:10:17+01:00 START qwen35-4b-base (Qwen3.5-4B-Q4_K_M.gguf)
+2026-11-10T01:14:24+01:00 END qwen35-4b-base rc=0 responses=64/64
+2026-11-10T01:14:24+01:00 START gemma4-e2b-base (gemma-4-E2B-it-Q4_K_M.gguf)
+2026-11-10T01:16:16+01:00 END gemma4-e2b-base rc=0 responses=64/64
+2026-11-10T01:16:16+01:00 START gemma4-e2b-unc (Gemma-4-E2B-Unc-Q4_K_P.gguf)
+2026-11-10T01:17:41+01:00 END gemma4-e2b-unc rc=0 responses=64/64
+2026-11-10T01:17:41+01:00 START forge-1-e2b (Forge-1-E2B-Q4_K_M.gguf)
+2026-11-10T01:19:15+01:00 END forge-1-e2b rc=0 responses=64/64
+2026-11-10T01:19:15+01:00 START nanbeige-3b (Nanbeige_Nanbeige4.2-3B-Q4_K_M.gguf)
+2026-11-10T01:31:47+01:00 END nanbeige-3b rc=0 responses=64/64
+2026-11-10T01:31:47+01:00 START qwen35-4b-unc (Qwen3.5-4B-Unc-Q4_K_M.gguf)
+2026-11-10T01:35:48+01:00 END qwen35-4b-unc rc=0 responses=64/64
+2026-11-10T01:35:48+01:00 START lfm3-1.7b (LFM3-1.7B-Q4_K_M.gguf)
+2026-11-10T01:37:44+01:00 END lfm3-1.7b rc=0 responses=64/64
+2026-11-10T01:37:44+01:00 START gemma4-e4b-base (gemma-4-E4B-it-Q4_K_M.gguf)
+2026-11-10T01:41:11+01:00 END gemma4-e4b-base rc=0 responses=64/64
+2026-11-10T01:41:11+01:00 START gemma4-e4b-unc (Gemma-4-E4B-Unc-Q4_K_M.gguf)
+2026-11-10T01:44:38+01:00 END gemma4-e4b-unc rc=0 responses=64/64
+2026-11-10T01:44:38+01:00 START deepseek-9b-unc (DeepSeek-V4-Pro-Qwen3.5-9B-Unc-Q4_K_M.gguf)
+2026-11-10T01:53:11+01:00 END deepseek-9b-unc rc=0 responses=64/64
+2026-11-10T01:53:11+01:00 START qwen35-9b-base (Qwen3.5-9B-Q4_K_M.gguf)
+2026-11-10T02:01:40+01:00 END qwen35-9b-base rc=0 responses=64/64
+2026-11-10T02:01:40+01:00 START bimo-7b (Bimo-7B-CyberAgent-Q4_K_M.gguf)
+2026-11-10T02:09:07+01:00 END bimo-7b rc=0 responses=64/64
+2026-11-10T02:09:07+01:00 START gemma4-12b-qat (Gemma4-12B-QAT-Q4_K_M.gguf)
+2026-11-10T06:09:22+01:00 END gemma4-12b-qat rc=124 responses=52/64
+2026-11-10T06:09:22+01:00 SWEEP COMPLETE
+2026-11-10T06:09:22+01:00 scoring with p0_common.score_case
+2026-11-10T06:09:22+01:00 SCORING DONE

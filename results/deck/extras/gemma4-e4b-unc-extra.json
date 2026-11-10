@@ -1,0 +1,242 @@
+{
+ "label": "gemma4-e4b-unc",
+ "file": "/home/dav-sd/models/bench5/Gemma-4-E4B-Unc-Q4_K_M.gguf",
+ "tier": "variant",
+ "params": {
+  "ngl": 12,
+  "ctx": 8192,
+  "threads": 4,
+  "load_s": 18.0,
+  "llama_commit": ""
+ },
+ "sha256": "d0027dd3a9128d9323e9f282c8bf010a8526c46477584535991dc1a869b56e96",
+ "size_gb": 5.34,
+ "tasks": {
+  "speed4k": {
+   "depth_tokens": 3419,
+   "pp": 114.51,
+   "tg": 3.73,
+   "rss_mb": 527
+  },
+  "if": [
+   {
+    "id": "if-exact-en",
+    "ok": true,
+    "output": "OK",
+    "wall": 1.24
+   },
+   {
+    "id": "if-arith",
+    "ok": true,
+    "output": "391",
+    "wall": 1.65
+   },
+   {
+    "id": "if-zh-capital",
+    "ok": true,
+    "output": "\u6cd5\u56fd\u7684\u9996\u90fd\u662f\u5df4\u9ece\u3002",
+    "wall": 1.52
+   },
+   {
+    "id": "if-de-exact",
+    "ok": true,
+    "output": "Berlin",
+    "wall": 1.04
+   },
+   {
+    "id": "if-translate",
+    "ok": true,
+    "output": "Guten Morgen",
+    "wall": 1.37
+   },
+   {
+    "id": "if-json",
+    "ok": true,
+    "output": "```json\n{\"a\": 1, \"b\": 2}\n```",
+    "wall": 3.41
+   },
+   {
+    "id": "if-list",
+    "ok": true,
+    "output": "Red, Blue, Yellow",
+    "wall": 1.52
+   },
+   {
+    "id": "if-summary",
+    "ok": true,
+    "output": "The Steam Deck is a Valve-made handheld gaming computer that runs Linux and supports local language models.",
+    "wall": 8.84
+   }
+  ],
+  "json": [
+   {
+    "id": "json-01",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-1042\",\n  \"vendor\": \"Acme GmbH\",\n  \"date\": \"2026-03-04\",\n  \"total\": \"EUR 1299.50\",\n  \"category\": \"hardware\"\n}\n```",
+    "wall": 15.17
+   },
+   {
+    "id": "json-02",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-2087\",\n  \"vendor\": \"Northwind Ltd\",\n  \"date\": \"2026-04-12\",\n  \"total\": \"EUR 87.25\",\n  \"category\": \"software\"\n}\n```",
+    "wall": 15.65
+   },
+   {
+    "id": "json-03",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-3311\",\n  \"vendor\": \"Contoso AG\",\n  \"date\": \"2026-05-30\",\n  \"total\": \"EUR 450.00\",\n  \"category\": \"services\"\n}\n```",
+    "wall": 16.44
+   },
+   {
+    "id": "json-04",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-4420\",\n  \"vendor\": \"Globex Inc\",\n  \"date\": \"2026-06-18\",\n  \"total\": \"EUR 12.99\",\n  \"category\": \"hardware\"\n}\n```",
+    "wall": 15.5
+   },
+   {
+    "id": "json-05",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-5502\",\n  \"vendor\": \"Initech\",\n  \"date\": \"2026-07-01\",\n  \"total\": \"EUR 2300.75\",\n  \"category\": \"services\"\n}\n```",
+    "wall": 11.47
+   },
+   {
+    "id": "json-06",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-6614\",\n  \"vendor\": \"Umbrella KG\",\n  \"date\": \"2026-08-09\",\n  \"total\": \"EUR 64.40\",\n  \"category\": \"software\"\n}\n```",
+    "wall": 9.57
+   },
+   {
+    "id": "json-07",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-7721\",\n  \"vendor\": \"Soylent LLC\",\n  \"date\": \"2026-09-23\",\n  \"total\": \"EUR 999.99\",\n  \"category\": \"hardware\"\n}\n```",
+    "wall": 9.65
+   },
+   {
+    "id": "json-08",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-8830\",\n  \"vendor\": \"Hooli\",\n  \"date\": \"2026-10-05\",\n  \"total\": \"EUR 310.10\",\n  \"category\": \"services\"\n}\n```",
+    "wall": 9.52
+   },
+   {
+    "id": "json-09",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-9940\",\n  \"vendor\": \"Vandelay\",\n  \"date\": \"2026-10-31\",\n  \"total\": \"EUR 5.50\",\n  \"category\": \"software\"\n}\n```",
+    "wall": 9.38
+   },
+   {
+    "id": "json-10",
+    "ok": false,
+    "output": "```json\n{\n  \"invoice\": \"INV-1055\",\n  \"vendor\": \"Wayne Enterprises\",\n  \"date\": \"2026-11-02\",\n  \"total\": \"EUR 780.00\",\n  \"category\": \"services\"\n}\n```",
+    "wall": 9.49
+   }
+  ],
+  "tool": [
+   {
+    "id": "tool-01",
+    "ok": true,
+    "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Berlin\"}}",
+    "wall": 8.25
+   },
+   {
+    "id": "tool-02",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"Steam Deck OLED reviews\"}}",
+    "wall": 9.68
+   },
+   {
+    "id": "tool-03",
+    "ok": true,
+    "output": "{\"tool\": \"read_file\", \"arguments\": {\"path\": \"/tmp/notes.txt\"}}",
+    "wall": 9.37
+   },
+   {
+    "id": "tool-04",
+    "ok": true,
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"a@example.com\", \"subject\": \"Report\"}}",
+    "wall": 10.96
+   },
+   {
+    "id": "tool-05",
+    "ok": true,
+    "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}",
+    "wall": 8.24
+   },
+   {
+    "id": "tool-06",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"llama.cpp RPC benchmarks\"}}",
+    "wall": 10.36
+   },
+   {
+    "id": "tool-07",
+    "ok": true,
+    "output": "{\"tool\": \"read_file\", \"arguments\": {\"path\": \"/etc/hostname\"}}",
+    "wall": 9.41
+   },
+   {
+    "id": "tool-08",
+    "ok": true,
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"bob@example.org\", \"subject\": \"Invoice\"}}",
+    "wall": 4.52
+   },
+   {
+    "id": "tool-09",
+    "ok": true,
+    "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Paris\"}}",
+    "wall": 3.42
+   },
+   {
+    "id": "tool-10",
+    "ok": true,
+    "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"Qwen3.5 9B GGUF\"}}",
+    "wall": 4.98
+   }
+  ],
+  "niah4k": [
+   {
+    "id": "niah-3500-ORBITAL-7",
+    "ok": true,
+    "output": "Q7-4419",
+    "wall": 26.63
+   },
+   {
+    "id": "niah-3500-HALCYON-3",
+    "ok": true,
+    "output": "K3-8820",
+    "wall": 26.26
+   },
+   {
+    "id": "niah-3500-MERIDIAN-9",
+    "ok": true,
+    "output": "M9-1274",
+    "wall": 34.86
+   },
+   {
+    "id": "niah-3500-CASCADE-5",
+    "ok": true,
+    "output": "R2-6631",
+    "wall": 22.06
+   },
+   {
+    "id": "niah-3500-TUNDRA-2",
+    "ok": true,
+    "output": "T5-9084",
+    "wall": 12.91
+   }
+  ]
+ },
+ "scores": {
+  "if": 15.0,
+  "json": 0.0,
+  "tool": 5.0,
+  "niah": 15.0,
+  "speed": 4.66
+ },
+ "gates": {
+  "tg_ge_5": false,
+  "json_ge_9": false,
+  "niah4k_ge_4": true,
+  "rss_le_10_5_gb": true
+ },
+ "elapsed_s": 416.9
+}
