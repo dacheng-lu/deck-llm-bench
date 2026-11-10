@@ -1,0 +1,49 @@
+{
+  "run": "ollama-2026-11-10",
+  "models": [
+    {
+      "label": "mimo-v2.6",
+      "tag": "mimo-v2.6",
+      "params": "9B",
+      "size_gb": 8.7,
+      "modalities": ["text", "image"],
+      "notes": "Xiaomi MiMo v2.6 distill of Qwen3.5-9B, thinking, 256K context, MIT",
+      "url": "https://ollama.com/library/mimo-v2.6"
+    },
+    {
+      "label": "pplx-decider-flash",
+      "tag": "pplx-decider-flash",
+      "params": "4B",
+      "size_gb": 5.6,
+      "modalities": ["text", "image"],
+      "notes": "Perplexity decision model on Qwen3.5-4B, 256K context; Linux status: unsupported (requires MLX runtime)",
+      "url": "https://ollama.com/library/pplx-decider-flash"
+    },
+    {
+      "label": "bonsai-2-9b",
+      "tag": "bonsai-2:9b",
+      "params": "9B",
+      "size_gb": 3.2,
+      "modalities": ["text", "image"],
+      "notes": "Prism ML ternary-weight family, vision/tools/thinking",
+      "url": "https://ollama.com/library/bonsai-2:9b"
+    },
+    {
+      "label": "lfm3-1.7b",
+      "tag": "lfm3",
+      "params": "1.7B",
+      "size_gb": 1.7,
+      "modalities": ["text"],
+      "notes": "Liquid AI tri-hybrid small model, tools/thinking, 256K context",
+      "url": "https://ollama.com/library/lfm3"
+    }
+  ],
+  "tasks": {
+    "if": "8 instruction-following prompts, zh/en/de",
+    "json": "8 invoice extractions, exact keys and values",
+    "niah4k": "3 needles in a ~4K-token haystack",
+    "tool": "8 tool-selection requests, exact name and args",
+    "code": "4 code-generation checks (Python/SQL/regex)"
+  },
+  "scoring": "per-category pass rate; macro average of the five categories; speed from Ollama eval tokens/s"
+}

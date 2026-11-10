@@ -1,0 +1,453 @@
+{
+  "base": "http://127.0.0.1:11434",
+  "elapsed_s": 531.6,
+  "label": "bonsai-2-9b",
+  "machine": "pc",
+  "model": "bonsai-2:9b",
+  "model_info": {
+    "details": {
+      "context_length": 262144,
+      "embedding_length": 4096,
+      "families": [
+        "qwen35"
+      ],
+      "family": "qwen35",
+      "format": "gguf",
+      "parameter_size": "9.0B",
+      "parent_model": "Ternary-Bonsai-2-9B-Q2_0.gguf",
+      "quantization_level": "Q2_0",
+      "runner": "llamacpp"
+    },
+    "digest": "c8b5462f8688647fe0b53568e3c00181ada5f05300aa4bf00695f2902f4d388e",
+    "name": "bonsai-2:9b",
+    "size_gb": 3.18
+  },
+  "started_at": 1794305153.197,
+  "summary": {
+    "code": {
+      "n": 4,
+      "ok": 4,
+      "pct": 100.0,
+      "pp_mean": 41.69,
+      "tg_mean": 26.23,
+      "wall_mean": 20.93
+    },
+    "if": {
+      "n": 8,
+      "ok": 6,
+      "pct": 75.0,
+      "pp_mean": 47.46,
+      "tg_mean": 24.95,
+      "wall_mean": 11.32
+    },
+    "json": {
+      "n": 8,
+      "ok": 0,
+      "pct": 0.0,
+      "pp_mean": 278.36,
+      "tg_mean": 25.48,
+      "wall_mean": 30.51
+    },
+    "macro_pct": 37.5,
+    "niah4k": {
+      "n": 3,
+      "ok": 0,
+      "pct": 0.0,
+      "pp_mean": 3917.33,
+      "tg_mean": 22.14,
+      "wall_mean": 4.72
+    },
+    "tool": {
+      "n": 8,
+      "ok": 1,
+      "pct": 12.5,
+      "pp_mean": 368.77,
+      "tg_mean": 26.16,
+      "wall_mean": 12.37
+    }
+  },
+  "tasks": {
+    "code": [
+      {
+        "eval_count": 228,
+        "id": "code-add",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "```python\ndef add(a, b):\n    return a + b\n```",
+        "pp": 40.66,
+        "prompt_count": 29,
+        "tg": 26.29,
+        "ttft_s": null,
+        "wall_s": 9.433
+      },
+      {
+        "eval_count": 357,
+        "id": "code-sql",
+        "load_ms": 0.5,
+        "ok": true,
+        "output": "SELECT name FROM users WHERE age > 18;",
+        "pp": 41.34,
+        "prompt_count": 32,
+        "tg": 26.07,
+        "ttft_s": null,
+        "wall_s": 14.516
+      },
+      {
+        "eval_count": 768,
+        "id": "code-reverse",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Write a Python expression that reverses a string `s`.\n    *   Constraint: Reply with code only.\n\n2.  **Identify the Solution:**\n    *   In Python, the most common and concise way to reverse a string is using slicing with a step of -1.\n    *   Syntax: `s[::-1]`\n    *   Alternative: `\"\".join(reversed(s))` (but this is more verbose).\n    *   Constraint Check: \"Reply with code only.\"\n\n3.  **Formulate the Output:**\n    *   The expression is `s[::-1]`.\n    *   I need to make sure I don't add any explanations, markdown blocks (unless necessary for clarity, but \"code only\" usually implies just the text), or extra words.\n    *   However, usually, when people ask for an expression, they expect the syntax itself.\n    *   Let's check if `s[",
+        "pp": 42.31,
+        "prompt_count": 26,
+        "tg": 26.3,
+        "ttft_s": null,
+        "wall_s": 29.862
+      },
+      {
+        "eval_count": 768,
+        "id": "code-email",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Write a Python regex that matches a basic email address.\n    *   Constraint: Reply with the regex only.\n\n2.  **Determine the Regex Pattern:**\n    *   A \"basic\" email address typically consists of:\n        *   Local part (before @): Alphanumeric, dots, underscores, hyphens, plus signs.\n        *   Domain part (after @): Alphanumeric, hyphens, dots.\n        *   Top-level domain (TLD): At least 2 letters.\n    *   Common regex for basic email: `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$`\n    *   However, the prompt asks for \"the regex only\". I need to make sure it's a valid Python string representation or just the pattern itself. Usually, when asked for a regex in Python context, providing the raw pattern is expected, often wr",
+        "pp": 42.45,
+        "prompt_count": 27,
+        "tg": 26.27,
+        "ttft_s": null,
+        "wall_s": 29.929
+      }
+    ],
+    "if": [
+      {
+        "eval_count": 165,
+        "id": "if-exact-en",
+        "load_ms": 7036.9,
+        "ok": true,
+        "output": "OK",
+        "pp": 2.35,
+        "prompt_count": 15,
+        "tg": 25.97,
+        "ttft_s": null,
+        "wall_s": 19.784
+      },
+      {
+        "eval_count": 256,
+        "id": "if-arith",
+        "load_ms": 1.2,
+        "ok": true,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:** The user is asking for the product of 17 and 23. They explicitly requested the reply to contain *only* the number.\n\n2.  **Calculate the Product:**\n    *   $17 \\times 23$\n    *   Method 1: Standard multiplication\n        *   $17 \\times 3 = 51$\n        *   $17 \\times 20 = 340$\n        *   $340 + 51 = 391$\n    *   Method 2: $(20 - 3) \\times 23$ or $(10 + 7) \\times 23$\n        *   $17 \\times 23 = (10 + 7) \\times 23 = 230 + 161 = 391$\n    *   Method 3: ",
+        "pp": 33.71,
+        "prompt_count": 26,
+        "tg": 23.68,
+        "ttft_s": null,
+        "wall_s": 11.636
+      },
+      {
+        "eval_count": 256,
+        "id": "if-zh-capital",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "法国的首",
+        "pp": 39.4,
+        "prompt_count": 21,
+        "tg": 24.67,
+        "ttft_s": null,
+        "wall_s": 10.981
+      },
+      {
+        "eval_count": 205,
+        "id": "if-de-exact",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "Berlin",
+        "pp": 6.62,
+        "prompt_count": 17,
+        "tg": 23.5,
+        "ttft_s": null,
+        "wall_s": 11.339
+      },
+      {
+        "eval_count": 152,
+        "id": "if-translate",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "guten Morgen",
+        "pp": 39.94,
+        "prompt_count": 22,
+        "tg": 23.94,
+        "ttft_s": null,
+        "wall_s": 6.949
+      },
+      {
+        "eval_count": 256,
+        "id": "if-json",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "{\"a\": 1, \"b\":",
+        "pp": 37.93,
+        "prompt_count": 26,
+        "tg": 25.71,
+        "ttft_s": null,
+        "wall_s": 10.711
+      },
+      {
+        "eval_count": 221,
+        "id": "if-list",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "Red, Yellow, Blue",
+        "pp": 39.9,
+        "prompt_count": 22,
+        "tg": 25.89,
+        "ttft_s": null,
+        "wall_s": 9.14
+      },
+      {
+        "eval_count": 256,
+        "id": "if-summary",
+        "load_ms": 0.7,
+        "ok": true,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Summarize the provided text.\n    *   Constraint: One short sentence.\n    *   Input Text: \"The Steam Deck is a handheld gaming computer made by Valve. It runs Linux and can also run local language models.\"\n\n2.  **Identify Key Information:**\n    *   Subject: Steam Deck.\n    *   Type: Handheld gaming computer.\n    *   Manufacturer: Valve.\n    *   OS/Software: Runs Linux, supports local language models.\n\n3.  **Draft Initial Summaries:**\n ",
+        "pp": 179.81,
+        "prompt_count": 41,
+        "tg": 26.26,
+        "ttft_s": null,
+        "wall_s": 10.03
+      }
+    ],
+    "json": [
+      {
+        "eval_count": 768,
+        "id": "json-01",
+        "load_ms": 5.0,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Extract invoice fields from the provided text.\n    *   Output Format: JSON only.\n    *   Required Keys: `invoice`, `vendor`, `date`, `total`, `category`.\n    *   Input Text: \"Invoice INV-1042 from Acme GmbH, dated 2026-03-04, total EUR 1299.50, category hardware.\"\n\n2.  **Extract Information:**\n    *   `invoice`: \"INV-1042\" (Found after \"Invoice\")\n    *   `vendor`: \"Acme GmbH\" (Found after \"from\")\n    *   `date`: \"2026-03-04\" (Found after \"dated\")\n    *   `total`: \"EUR 1299.50\" or just \"1299.50\"? Usually, keeping the currency symbol ",
+        "pp": 284.75,
+        "prompt_count": 74,
+        "tg": 26.06,
+        "ttft_s": null,
+        "wall_s": 29.79
+      },
+      {
+        "eval_count": 768,
+        "id": "json-02",
+        "load_ms": 0.9,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Extract invoice fields from the provided text.\n    *   Output Format: JSON only.\n    *   Required Keys: `invoice`, `vendor`, `date`, `total`, `category`.\n    *   Input Text: \"Invoice INV-2087 from Northwind Ltd, dated 2026-04-12, total EUR 87.25, category software.\"\n\n2.  **Extract Information:**\n    *   `invoice`: \"INV-2087\" (Found after \"Invoice\")\n    *   `vendor`: \"Northwind Ltd\" (Found after \"from\")\n    *   `date`: \"2026-04-12\" (Found after \"dated\")\n    *   `total`: \"EUR 87.25\" or just \"87.25\"? Usually, keeping the currency symbo",
+        "pp": 283.34,
+        "prompt_count": 72,
+        "tg": 26.2,
+        "ttft_s": null,
+        "wall_s": 29.62
+      },
+      {
+        "eval_count": 768,
+        "id": "json-03",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Extract invoice fields from the provided text.\n    *   Output Format: JSON only.\n    *   Required Keys: `invoice`, `vendor`, `date`, `total`, `category`.\n    *   Input Text: \"Invoice INV-3311 from Contoso AG, dated 2026-05-30, total EUR 450.00, category services.\"\n\n2.  **Extract Information:**\n    *   `invoice`: \"INV-3311\" (Found after \"Invoice\")\n    *   `vendor`: \"Contoso AG\" (Found after \"from\")\n    *   `date`: \"2026-05-30\" (Found after \"dated\")\n    *   `total`: \"EUR 450.00\" (Found after \"total\") or just \"450.00\"? Usually, keeping",
+        "pp": 282.76,
+        "prompt_count": 73,
+        "tg": 26.17,
+        "ttft_s": null,
+        "wall_s": 29.658
+      },
+      {
+        "eval_count": 768,
+        "id": "json-04",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Extract invoice fields from the provided text.\n    *   Output Format: JSON only.\n    *   Required Keys: `invoice`, `vendor`, `date`, `total`, `category`.\n    *   Input Text: \"Invoice INV-4420 from Globex Inc, dated 2026-06-18, total EUR 12.99, category hardware.\"\n\n2.  **Extract Information:**\n    *   `invoice`: \"INV-4420\" (Found after \"Invoice\")\n    *   `vendor`: \"Globex Inc\" (Found after \"from\")\n    *   `date`: \"2026-06-18\" (Found after \"dated\")\n    *   `total`: \"EUR 12.99\" or just \"12.99\"? Usually, keeping the currency is better f",
+        "pp": 279.79,
+        "prompt_count": 72,
+        "tg": 26.25,
+        "ttft_s": null,
+        "wall_s": 29.574
+      },
+      {
+        "eval_count": 768,
+        "id": "json-05",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Extract invoice fields from the provided text.\n    *   Output Format: JSON only.\n    *   Required Keys: `invoice`, `vendor`, `date`, `total`, `category`.\n    *   Input Text: \"Invoice INV-5502 from Initech, dated 2026-07-01, total EUR 2300.75, category services.\"\n\n2.  **Extract Information:**\n    *   `invoice`: \"INV-5502\" (Found in \"Invoice INV-5502\")\n    *   `vendor`: \"Initech\" (Found in \"from Initech\")\n    *   `date`: \"2026-07-01\" (Found in \"dated 2026-07-01\")\n    *   `total`: \"EUR 2300.75\" or just \"2300.75\"? Usually, keeping the c",
+        "pp": 285.09,
+        "prompt_count": 73,
+        "tg": 26.35,
+        "ttft_s": null,
+        "wall_s": 29.459
+      },
+      {
+        "eval_count": 768,
+        "id": "json-06",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Extract invoice fields from the provided text.\n    *   Output Format: JSON only.\n    *   Required Keys: `invoice`, `vendor`, `date`, `total`, `category`.\n    *   Input Text: \"Invoice INV-6614 from Umbrella KG, dated 2026-08-09, total EUR 64.40, category software.\"\n\n2.  **Extract Information:**\n    *   `invoice`: \"INV-6614\" (Found after \"Invoice\")\n    *   `vendor`: \"Umbrella KG\" (Found after \"from\")\n    *   `date`: \"2026-08-09\" (Found after \"dated\")\n    *   `total`: \"EUR 64.40\" or just \"64.40\"? Usually, keeping the currency is better",
+        "pp": 282.53,
+        "prompt_count": 72,
+        "tg": 24.79,
+        "ttft_s": null,
+        "wall_s": 31.293
+      },
+      {
+        "eval_count": 768,
+        "id": "json-07",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Extract invoice fields from the provided text.\n    *   Output Format: JSON only.\n    *   Required Keys: `invoice`, `vendor`, `date`, `total`, `category`.\n    *   Input Text: \"Invoice INV-7721 from Soylent LLC, dated 2026-09-23, total EUR 999.99, category hardware.\"\n\n2.  **Extract Information:**\n    *   `invoice`: \"INV-7721\" (Found after \"Invoice\")\n    *   `vendor`: \"Soylent LLC\" (Found after \"from\")\n    *   `date`: \"2026-09-23\" (Found after \"dated\")\n    *   `total`: \"EUR 999.99\" (Found after \"total\") or just \"999.99\"? Usually, keepi",
+        "pp": 259.96,
+        "prompt_count": 74,
+        "tg": 23.75,
+        "ttft_s": null,
+        "wall_s": 32.685
+      },
+      {
+        "eval_count": 768,
+        "id": "json-08",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Extract invoice fields from the provided text.\n    *   Output Format: JSON only.\n    *   Required Keys: `invoice`, `vendor`, `date`, `total`, `category`.\n    *   Input Text: \"Invoice INV-8830 from Hooli, dated 2026-10-05, total EUR 310.10, category services.\"\n\n2.  **Extract Information:**\n    *   `invoice`: \"INV-8830\" (Found after \"Invoice\")\n    *   `vendor`: \"Hooli\" (Found after \"from\")\n    *   `date`: \"2026-10-05\" (Found after \"dated\")\n    *   `total`: \"EUR 310.10\" or just \"310.10\"? Usually, keeping the currency symbol is safer un",
+        "pp": 268.64,
+        "prompt_count": 73,
+        "tg": 24.24,
+        "ttft_s": null,
+        "wall_s": 32.007
+      }
+    ],
+    "niah4k": [
+      {
+        "eval_count": 64,
+        "id": "niah-4k-ORBITAL-7",
+        "load_ms": 0.8,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A text block containing repeated sentences and some specific lines about access codes.\n    *   Task: Read the text and answer with the ac",
+        "pp": 957.0,
+        "prompt_count": 3746,
+        "tg": 20.84,
+        "ttft_s": null,
+        "wall_s": 7.08
+      },
+      {
+        "eval_count": 64,
+        "id": "niah-4k-HALCYON-3",
+        "load_ms": 0.9,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A text containing repeated paragraphs and some specific lines about access codes.\n    *   Task: Read the text and answer with the access ",
+        "pp": 5225.8,
+        "prompt_count": 3746,
+        "tg": 21.81,
+        "ttft_s": null,
+        "wall_s": 3.684
+      },
+      {
+        "eval_count": 64,
+        "id": "niah-4k-MERIDIAN-9",
+        "load_ms": 0.9,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A text containing repeated paragraphs and some specific lines about access codes.\n    *   Task: Read the text and answer with the access ",
+        "pp": 5569.19,
+        "prompt_count": 3746,
+        "tg": 23.78,
+        "ttft_s": null,
+        "wall_s": 3.401
+      }
+    ],
+    "tool": [
+      {
+        "eval_count": 320,
+        "id": "tool-01",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: \"What is the weather in Berlin?\"\n    *   Available Tools: `get_weather`, `search_web`, `read_file`, `send_email`.\n    *   Constraint: Choose one tool and reply with JSON only in the format `{\"tool\": \"<name>\", \"arguments\": {...}}`.\n\n2.  **Select the Tool:**\n    *   The user is asking for weather information in a specific city (Berlin).\n    *   The `get_weather` tool is specifically designed for this purpose.\n    *   The `search_web` t",
+        "pp": 368.63,
+        "prompt_count": 105,
+        "tg": 25.94,
+        "ttft_s": null,
+        "wall_s": 12.739
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-02",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "{\"tool\": \"search_web\", \"",
+        "pp": 375.18,
+        "prompt_count": 107,
+        "tg": 26.26,
+        "ttft_s": null,
+        "wall_s": 12.528
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-03",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A request to read a specific file (`/tmp/notes.txt`).\n    *   Available Tools: `get_weather`, `search_web`, `read_file`, `send_email`.\n    *   Constraint: Choose one tool and reply with JSON only in the format `{\"tool\": \"<name>\", \"arguments\": {...}}`.\n\n2.  **Select the Tool:**\n    *   The request is explicitly to \"Read the file\".\n    *   The tool `read_file` matches this action perfectly.\n    *   Arguments required: `path`.\n    *   P",
+        "pp": 347.96,
+        "prompt_count": 106,
+        "tg": 25.82,
+        "ttft_s": null,
+        "wall_s": 12.744
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-04",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A request to send an email.\n    *   Details: To address `a@example.com`, Subject `Report`.\n    *   Available Tools: `get_weather`, `search_web`, `read_file`, `send_email`.\n    *   Constraint: Choose one tool and reply with JSON only in the format `{\"tool\": \"<name>\", \"arguments\": {...}}`.\n\n2.  **Select the Tool:**\n    *   The request is explicitly about sending an email.\n    *   The available tool that matches this action is `send_ema",
+        "pp": 371.63,
+        "prompt_count": 108,
+        "tg": 26.27,
+        "ttft_s": null,
+        "wall_s": 12.526
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-05",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: \"What's the weather in Tokyo?\"\n    *   Available Tools: `get_weather`, `search_web`, `read_file`, `send_email`.\n    *   Constraint: Choose one tool and reply with JSON only in the format `{\"tool\": \"<name>\", \"arguments\": {...}}`.\n\n2.  **Select the Tool:**\n    *   The user is asking for weather information in a specific city (Tokyo).\n    *   The `get_weather` tool is specifically designed for this purpose.\n    *   The `search_web` tool",
+        "pp": 372.19,
+        "prompt_count": 105,
+        "tg": 26.16,
+        "ttft_s": null,
+        "wall_s": 12.582
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-06",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A request to \"Search for llama.cpp RPC benchmarks\".\n    *   Available Tools: `get_weather`, `search_web`, `read_file`, `send_email`.\n    *   Constraint: Choose one tool and reply with JSON only in the format `{\"tool\": \"<name>\", \"arguments\": {...}}`.\n\n2.  **Evaluate Tools:**\n    *   `get_weather`: Gets weather data for a city. Not relevant.\n    *   `search_web`: Searches the web for information. This is relevant for finding benchmarks",
+        "pp": 369.75,
+        "prompt_count": 104,
+        "tg": 26.23,
+        "ttft_s": null,
+        "wall_s": 12.537
+      },
+      {
+        "eval_count": 276,
+        "id": "tool-07",
+        "load_ms": 0.7,
+        "ok": true,
+        "output": "{\"tool\": \"read_file\", \"arguments\": {\"path\": \"/etc/hostname\"}}",
+        "pp": 374.08,
+        "prompt_count": 105,
+        "tg": 26.26,
+        "ttft_s": null,
+        "wall_s": 10.84
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-08",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A request to \"Email bob@example.org about the invoice\".\n    *   Available Tools: `get_weather`, `search_web`, `read_file`, `send_email`.\n    *   Constraint: Choose one tool and reply with JSON only in the format `{\"tool\": \"<name>\", \"arguments\": {...}}`.\n\n2.  **Evaluate the Request against Tools:**\n    *   The user wants to send an email.\n    *   The `send_email` tool exists and matches the action required (sending an email to a speci",
+        "pp": 370.73,
+        "prompt_count": 105,
+        "tg": 26.31,
+        "ttft_s": null,
+        "wall_s": 12.492
+      }
+    ]
+  }
+}

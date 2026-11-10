@@ -133,6 +133,41 @@ Only the two Qwen 3.5 4B models pass every component gate. The JSON column is
 the main separator: most runs fail the strict 9/10 gate even when their prose
 answers look reasonable.
 
+### Ollama multi-task run, 2026-11-10
+
+A separate compact suite for four Ollama models, run on the PC and the Deck:
+8 IF, 8 invoice-JSON, 3 needle, 8 tool, and 4 code tasks. Scores are
+per-category pass rates; `macro` is the unweighted mean of the five categories.
+This is not the same scale as the weighted GGUF table above.
+
+| model | GB | PC macro | Deck macro | PC tg/s | Deck tg/s |
+|---|---:|---:|---:|---:|---:|
+| `mimo-v2.6` | 8.7 | 67.5 | 70.0 | 10.3 | 12.5 |
+| `bonsai-2:9b` | 3.2 | 37.5 | — (partial) | 25.0 | 6.1 |
+| `lfm3` | 1.7 | 50.0 | 45.0 | 35.5 | 45.5 |
+| `pplx-decider-flash` | 5.6 | — | — | — | — |
+
+Per-category:
+
+| model / machine | IF | JSON | NIAH | Tool | Code |
+|---|---:|---:|---:|---:|---:|
+| `mimo-v2.6` PC | 100.0 | 0.0 | 100.0 | 37.5 | 100.0 |
+| `mimo-v2.6` Deck | 100.0 | 0.0 | 100.0 | 50.0 | 100.0 |
+| `bonsai-2:9b` PC | 75.0 | 0.0 | 0.0 | 12.5 | 100.0 |
+| `bonsai-2:9b` Deck, partial | 87.5 | — | — | — | 100.0 |
+| `lfm3` PC | 100.0 | 50.0 | 0.0 | 0.0 | 100.0 |
+| `lfm3` Deck | 100.0 | 25.0 | 0.0 | 0.0 | 100.0 |
+
+`pplx-decider-flash` is **not runnable on Linux with Ollama 0.40.15**: the pull
+fails with `this model requires MLX support, but the MLX runtime is not
+available`. It is not a zero score. `bonsai-2:9b` on the Deck completed the IF
+and code categories but was stopped before the JSON/NIAH/tool categories
+because each request took 30-130 s; its Deck macro is intentionally blank.
+
+Raw data and method: `results/ollama/README.md`, `results/ollama/pc/`,
+`results/ollama/deck/`.
+
+
 
 ## Reproduce
 

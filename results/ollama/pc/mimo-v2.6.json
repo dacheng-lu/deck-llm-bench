@@ -1,0 +1,441 @@
+{
+  "base": "http://127.0.0.1:11434",
+  "elapsed_s": 287.0,
+  "label": "mimo-v2.6",
+  "machine": "pc",
+  "model": "mimo-v2.6",
+  "model_info": {
+    "details": null,
+    "digest": null,
+    "name": "mimo-v2.6",
+    "size_gb": null
+  },
+  "started_at": 1794304433.824,
+  "summary": {
+    "code": {
+      "n": 4,
+      "ok": 4,
+      "pct": 100.0,
+      "pp_mean": 23.8,
+      "tg_mean": 10.54,
+      "wall_mean": 5.97
+    },
+    "if": {
+      "n": 8,
+      "ok": 8,
+      "pct": 100.0,
+      "pp_mean": 25.92,
+      "tg_mean": 10.68,
+      "wall_mean": 6.85
+    },
+    "json": {
+      "n": 8,
+      "ok": 0,
+      "pct": 0.0,
+      "pp_mean": 107.63,
+      "tg_mean": 10.37,
+      "wall_mean": 15.65
+    },
+    "macro_pct": 67.5,
+    "niah4k": {
+      "n": 3,
+      "ok": 3,
+      "pct": 100.0,
+      "pp_mean": 2494.61,
+      "tg_mean": 9.48,
+      "wall_mean": 6.74
+    },
+    "tool": {
+      "n": 8,
+      "ok": 3,
+      "pct": 37.5,
+      "pp_mean": 164.45,
+      "tg_mean": 10.58,
+      "wall_mean": 7.87
+    }
+  },
+  "tasks": {
+    "code": [
+      {
+        "eval_count": 31,
+        "id": "code-add",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "```python\ndef add(a, b):\n    return a + b\n```",
+        "pp": 23.83,
+        "prompt_count": 28,
+        "tg": 10.64,
+        "ttft_s": null,
+        "wall_s": 4.136
+      },
+      {
+        "eval_count": 26,
+        "id": "code-sql",
+        "load_ms": 0.5,
+        "ok": true,
+        "output": "SELECT name FROM users WHERE age > 18;",
+        "pp": 27.01,
+        "prompt_count": 31,
+        "tg": 10.67,
+        "ttft_s": null,
+        "wall_s": 3.634
+      },
+      {
+        "eval_count": 71,
+        "id": "code-reverse",
+        "load_ms": 0.5,
+        "ok": true,
+        "output": "```python\ns[::-1]\n```",
+        "pp": 21.43,
+        "prompt_count": 25,
+        "tg": 10.48,
+        "ttft_s": null,
+        "wall_s": 7.996
+      },
+      {
+        "eval_count": 72,
+        "id": "code-email",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "`^[^@\\s]+@[^@\\s]+\\.[a-z]{2,}$`",
+        "pp": 22.91,
+        "prompt_count": 26,
+        "tg": 10.38,
+        "ttft_s": null,
+        "wall_s": 8.115
+      }
+    ],
+    "if": [
+      {
+        "eval_count": 23,
+        "id": "if-exact-en",
+        "load_ms": 16552.5,
+        "ok": true,
+        "output": "OK",
+        "pp": 15.32,
+        "prompt_count": 14,
+        "tg": 10.73,
+        "ttft_s": null,
+        "wall_s": 19.619
+      },
+      {
+        "eval_count": 38,
+        "id": "if-arith",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "391",
+        "pp": 22.66,
+        "prompt_count": 25,
+        "tg": 10.61,
+        "ttft_s": null,
+        "wall_s": 4.726
+      },
+      {
+        "eval_count": 51,
+        "id": "if-zh-capital",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "法国的首都是巴黎。",
+        "pp": 25.71,
+        "prompt_count": 20,
+        "tg": 10.62,
+        "ttft_s": null,
+        "wall_s": 5.627
+      },
+      {
+        "eval_count": 29,
+        "id": "if-de-exact",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "Berlin",
+        "pp": 21.44,
+        "prompt_count": 16,
+        "tg": 10.79,
+        "ttft_s": null,
+        "wall_s": 3.477
+      },
+      {
+        "eval_count": 21,
+        "id": "if-translate",
+        "load_ms": 0.7,
+        "ok": true,
+        "output": "Guten Morgen",
+        "pp": 19.2,
+        "prompt_count": 21,
+        "tg": 10.9,
+        "ttft_s": null,
+        "wall_s": 3.062
+      },
+      {
+        "eval_count": 29,
+        "id": "if-json",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "{\"a\": 1, \"b\": 2}",
+        "pp": 21.93,
+        "prompt_count": 25,
+        "tg": 10.67,
+        "ttft_s": null,
+        "wall_s": 3.899
+      },
+      {
+        "eval_count": 55,
+        "id": "if-list",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "Red, yellow, blue.",
+        "pp": 16.88,
+        "prompt_count": 21,
+        "tg": 10.59,
+        "ttft_s": null,
+        "wall_s": 6.477
+      },
+      {
+        "eval_count": 76,
+        "id": "if-summary",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "The Steam Deck is Valve's Linux-powered handheld gaming computer that can also run local language models.",
+        "pp": 64.23,
+        "prompt_count": 40,
+        "tg": 10.52,
+        "ttft_s": null,
+        "wall_s": 7.89
+      }
+    ],
+    "json": [
+      {
+        "eval_count": 157,
+        "id": "json-01",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-1042\",\"vendor\":\"Acme GmbH\",\"date\":\"2026-03-04\",\"total\":\"EUR 1299.50\",\"category\":\"hardware\"}",
+        "pp": 63.06,
+        "prompt_count": 73,
+        "tg": 10.46,
+        "ttft_s": null,
+        "wall_s": 16.207
+      },
+      {
+        "eval_count": 151,
+        "id": "json-02",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-2087\",\"vendor\":\"Northwind Ltd\",\"date\":\"2026-04-12\",\"total\":\"EUR 87.25\",\"category\":\"software\"}",
+        "pp": 115.49,
+        "prompt_count": 71,
+        "tg": 10.32,
+        "ttft_s": null,
+        "wall_s": 15.284
+      },
+      {
+        "eval_count": 154,
+        "id": "json-03",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-3311\",\"vendor\":\"Contoso AG\",\"date\":\"2026-05-30\",\"total\":\"EUR 450.00\",\"category\":\"services\"}",
+        "pp": 109.52,
+        "prompt_count": 72,
+        "tg": 10.24,
+        "ttft_s": null,
+        "wall_s": 15.738
+      },
+      {
+        "eval_count": 151,
+        "id": "json-04",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-4420\",\"vendor\":\"Globex Inc\",\"date\":\"2026-06-18\",\"total\":\"EUR 12.99\",\"category\":\"hardware\"}",
+        "pp": 114.43,
+        "prompt_count": 71,
+        "tg": 10.29,
+        "ttft_s": null,
+        "wall_s": 15.338
+      },
+      {
+        "eval_count": 154,
+        "id": "json-05",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-5502\",\"vendor\":\"Initech\",\"date\":\"2026-07-01\",\"total\":\"EUR 2300.75\",\"category\":\"services\"}",
+        "pp": 111.64,
+        "prompt_count": 72,
+        "tg": 10.41,
+        "ttft_s": null,
+        "wall_s": 15.493
+      },
+      {
+        "eval_count": 151,
+        "id": "json-06",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-6614\",\"vendor\":\"Umbrella KG\",\"date\":\"2026-08-09\",\"total\":\"EUR 64.40\",\"category\":\"software\"}",
+        "pp": 114.0,
+        "prompt_count": 71,
+        "tg": 10.46,
+        "ttft_s": null,
+        "wall_s": 15.108
+      },
+      {
+        "eval_count": 157,
+        "id": "json-07",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-7721\",\"vendor\":\"Soylent LLC\",\"date\":\"2026-09-23\",\"total\":\"EUR 999.99\",\"category\":\"hardware\"}",
+        "pp": 118.84,
+        "prompt_count": 73,
+        "tg": 10.36,
+        "ttft_s": null,
+        "wall_s": 15.814
+      },
+      {
+        "eval_count": 162,
+        "id": "json-08",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "{\"invoice\": \"INV-8830\", \"vendor\": \"Hooli\", \"date\": \"2026-10-05\", \"total\": \"EUR 310.10\", \"category\": \"services\"}",
+        "pp": 114.06,
+        "prompt_count": 72,
+        "tg": 10.43,
+        "ttft_s": null,
+        "wall_s": 16.212
+      }
+    ],
+    "niah4k": [
+      {
+        "eval_count": 42,
+        "id": "niah-4k-ORBITAL-7",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "Q7-4419",
+        "pp": 608.36,
+        "prompt_count": 3745,
+        "tg": 9.57,
+        "ttft_s": null,
+        "wall_s": 10.621
+      },
+      {
+        "eval_count": 27,
+        "id": "niah-4k-HALCYON-3",
+        "load_ms": 1.0,
+        "ok": true,
+        "output": "K3-8820",
+        "pp": 3428.72,
+        "prompt_count": 3745,
+        "tg": 9.68,
+        "ttft_s": null,
+        "wall_s": 3.913
+      },
+      {
+        "eval_count": 42,
+        "id": "niah-4k-MERIDIAN-9",
+        "load_ms": 0.9,
+        "ok": true,
+        "output": "M9-1274",
+        "pp": 3446.76,
+        "prompt_count": 3745,
+        "tg": 9.2,
+        "ttft_s": null,
+        "wall_s": 5.682
+      }
+    ],
+    "tool": [
+      {
+        "eval_count": 40,
+        "id": "tool-01",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Berlin\"}}",
+        "pp": 164.26,
+        "prompt_count": 104,
+        "tg": 10.71,
+        "ttft_s": null,
+        "wall_s": 4.477
+      },
+      {
+        "eval_count": 47,
+        "id": "tool-02",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "The user wants me to search the web for Steam Deck OLED reviews. I have a search_web tool available. Let me use it.",
+        "pp": 166.68,
+        "prompt_count": 106,
+        "tg": 10.64,
+        "ttft_s": null,
+        "wall_s": 5.055
+      },
+      {
+        "eval_count": 42,
+        "id": "tool-03",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "The user wants me to read a file. I have a read_file tool. Let me use it.",
+        "pp": 167.07,
+        "prompt_count": 105,
+        "tg": 10.6,
+        "ttft_s": null,
+        "wall_s": 4.594
+      },
+      {
+        "eval_count": 195,
+        "id": "tool-04",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "The user wants to send an email. But wait — the request is vague. Let me think about what's being asked. The user says \"Send an email to a@example.com with subject Report\". That's a clear request to use the send_email tool.\n\nBut there's no body content specified. Let me just check — the tool signature is send_email(to, subject). There's no body parameter. So I should just send it.\n\nActually, let me reconsider. The request is straightforward — send an email. I have the tool. Let me just do it.\n\nW",
+        "pp": 165.05,
+        "prompt_count": 107,
+        "tg": 10.39,
+        "ttft_s": null,
+        "wall_s": 19.412
+      },
+      {
+        "eval_count": 31,
+        "id": "tool-05",
+        "load_ms": 0.5,
+        "ok": true,
+        "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}",
+        "pp": 163.79,
+        "prompt_count": 104,
+        "tg": 10.73,
+        "ttft_s": null,
+        "wall_s": 3.57
+      },
+      {
+        "eval_count": 41,
+        "id": "tool-06",
+        "load_ms": 0.5,
+        "ok": false,
+        "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"llama.cpp RPC benchmark\"}}",
+        "pp": 161.7,
+        "prompt_count": 103,
+        "tg": 10.7,
+        "ttft_s": null,
+        "wall_s": 4.47
+      },
+      {
+        "eval_count": 42,
+        "id": "tool-07",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "The user wants to open /etc/hostname. I have a read_file tool. Let me use it.",
+        "pp": 165.14,
+        "prompt_count": 104,
+        "tg": 10.61,
+        "ttft_s": null,
+        "wall_s": 4.591
+      },
+      {
+        "eval_count": 165,
+        "id": "tool-08",
+        "load_ms": 0.7,
+        "ok": true,
+        "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"bob@example.org\", \"subject\": \"Invoice\"}}",
+        "pp": 161.95,
+        "prompt_count": 104,
+        "tg": 10.24,
+        "ttft_s": null,
+        "wall_s": 16.76
+      }
+    ]
+  }
+}

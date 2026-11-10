@@ -1,0 +1,453 @@
+{
+  "base": "http://127.0.0.1:11434",
+  "elapsed_s": 275.2,
+  "label": "mimo-v2.6",
+  "machine": "deck",
+  "model": "mimo-v2.6",
+  "model_info": {
+    "details": {
+      "context_length": 262144,
+      "embedding_length": 4096,
+      "families": [
+        "qwen35"
+      ],
+      "family": "qwen35",
+      "format": "gguf",
+      "parameter_size": "9.0B",
+      "parent_model": "model-q4_K_M.gguf",
+      "quantization_level": "Q4_K_M",
+      "runner": "llamacpp"
+    },
+    "digest": "cc58eacf0e3e4a96556657fe6f29c80ca38401bf242eec83f4eee074dd02bc86",
+    "name": "mimo-v2.6:latest",
+    "size_gb": 6.55
+  },
+  "started_at": 1794306280.493,
+  "summary": {
+    "code": {
+      "n": 4,
+      "ok": 4,
+      "pct": 100.0,
+      "pp_mean": 42.44,
+      "tg_mean": 12.7,
+      "wall_mean": 4.45
+    },
+    "if": {
+      "n": 8,
+      "ok": 8,
+      "pct": 100.0,
+      "pp_mean": 34.89,
+      "tg_mean": 12.97,
+      "wall_mean": 4.83
+    },
+    "json": {
+      "n": 8,
+      "ok": 0,
+      "pct": 0.0,
+      "pp_mean": 57.72,
+      "tg_mean": 12.32,
+      "wall_mean": 14.49
+    },
+    "macro_pct": 70.0,
+    "niah4k": {
+      "n": 3,
+      "ok": 3,
+      "pct": 100.0,
+      "pp_mean": 520.78,
+      "tg_mean": 12.03,
+      "wall_mean": 17.67
+    },
+    "tool": {
+      "n": 8,
+      "ok": 4,
+      "pct": 50.0,
+      "pp_mean": 83.48,
+      "tg_mean": 12.32,
+      "wall_mean": 6.23
+    }
+  },
+  "tasks": {
+    "code": [
+      {
+        "eval_count": 31,
+        "id": "code-add",
+        "load_ms": 3.0,
+        "ok": true,
+        "output": "```python\ndef add(a, b):\n    return a + b\n```",
+        "pp": 44.29,
+        "prompt_count": 28,
+        "tg": 13.11,
+        "ttft_s": null,
+        "wall_s": 3.066
+      },
+      {
+        "eval_count": 26,
+        "id": "code-sql",
+        "load_ms": 1.2,
+        "ok": true,
+        "output": "SELECT name FROM users WHERE age > 18;",
+        "pp": 44.68,
+        "prompt_count": 31,
+        "tg": 12.16,
+        "ttft_s": null,
+        "wall_s": 2.915
+      },
+      {
+        "eval_count": 39,
+        "id": "code-reverse",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "`s[::-1]`",
+        "pp": 39.22,
+        "prompt_count": 25,
+        "tg": 12.49,
+        "ttft_s": null,
+        "wall_s": 3.841
+      },
+      {
+        "eval_count": 95,
+        "id": "code-email",
+        "load_ms": 1.2,
+        "ok": true,
+        "output": "`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$`",
+        "pp": 41.55,
+        "prompt_count": 26,
+        "tg": 13.04,
+        "ttft_s": null,
+        "wall_s": 7.989
+      }
+    ],
+    "if": [
+      {
+        "eval_count": 23,
+        "id": "if-exact-en",
+        "load_ms": 10826.1,
+        "ok": true,
+        "output": "OK",
+        "pp": 19.94,
+        "prompt_count": 14,
+        "tg": 12.76,
+        "ttft_s": null,
+        "wall_s": 13.335
+      },
+      {
+        "eval_count": 41,
+        "id": "if-arith",
+        "load_ms": 1.5,
+        "ok": true,
+        "output": "391",
+        "pp": 39.66,
+        "prompt_count": 25,
+        "tg": 12.8,
+        "ttft_s": null,
+        "wall_s": 3.916
+      },
+      {
+        "eval_count": 54,
+        "id": "if-zh-capital",
+        "load_ms": 5.1,
+        "ok": true,
+        "output": "法国的首都是巴黎。",
+        "pp": 32.66,
+        "prompt_count": 20,
+        "tg": 13.02,
+        "ttft_s": null,
+        "wall_s": 4.834
+      },
+      {
+        "eval_count": 27,
+        "id": "if-de-exact",
+        "load_ms": 1.0,
+        "ok": true,
+        "output": "Berlin",
+        "pp": 25.97,
+        "prompt_count": 16,
+        "tg": 13.15,
+        "ttft_s": null,
+        "wall_s": 2.75
+      },
+      {
+        "eval_count": 21,
+        "id": "if-translate",
+        "load_ms": 1.2,
+        "ok": true,
+        "output": "Guten Morgen",
+        "pp": 33.85,
+        "prompt_count": 21,
+        "tg": 13.35,
+        "ttft_s": null,
+        "wall_s": 2.265
+      },
+      {
+        "eval_count": 29,
+        "id": "if-json",
+        "load_ms": 1.3,
+        "ok": true,
+        "output": "{\"a\": 1, \"b\": 2}",
+        "pp": 40.08,
+        "prompt_count": 25,
+        "tg": 13.09,
+        "ttft_s": null,
+        "wall_s": 2.923
+      },
+      {
+        "eval_count": 54,
+        "id": "if-list",
+        "load_ms": 1.5,
+        "ok": true,
+        "output": "red, yellow, blue",
+        "pp": 33.88,
+        "prompt_count": 21,
+        "tg": 12.49,
+        "ttft_s": null,
+        "wall_s": 5.032
+      },
+      {
+        "eval_count": 36,
+        "id": "if-summary",
+        "load_ms": 1.3,
+        "ok": true,
+        "output": "The Steam Deck is Valve's Linux-based handheld gaming computer that can also run local language models.",
+        "pp": 53.07,
+        "prompt_count": 40,
+        "tg": 13.07,
+        "ttft_s": null,
+        "wall_s": 3.592
+      }
+    ],
+    "json": [
+      {
+        "eval_count": 157,
+        "id": "json-01",
+        "load_ms": 1.3,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-1042\",\"vendor\":\"Acme GmbH\",\"date\":\"2026-03-04\",\"total\":\"EUR 1299.50\",\"category\":\"hardware\"}",
+        "pp": 60.44,
+        "prompt_count": 73,
+        "tg": 12.71,
+        "ttft_s": null,
+        "wall_s": 13.641
+      },
+      {
+        "eval_count": 151,
+        "id": "json-02",
+        "load_ms": 0.9,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-2087\",\"vendor\":\"Northwind Ltd\",\"date\":\"2026-04-12\",\"total\":\"EUR 87.25\",\"category\":\"software\"}",
+        "pp": 57.64,
+        "prompt_count": 71,
+        "tg": 12.34,
+        "ttft_s": null,
+        "wall_s": 13.549
+      },
+      {
+        "eval_count": 214,
+        "id": "json-03",
+        "load_ms": 1.5,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-3311\",\"vendor\":\"Contoso AG\",\"date\":\"2026-05-30\",\"total\":\"EUR 450.00\",\"category\":\"services\"}",
+        "pp": 58.48,
+        "prompt_count": 72,
+        "tg": 12.25,
+        "ttft_s": null,
+        "wall_s": 18.789
+      },
+      {
+        "eval_count": 151,
+        "id": "json-04",
+        "load_ms": 1.5,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-4420\",\"vendor\":\"Globex Inc\",\"date\":\"2026-06-18\",\"total\":\"EUR 12.99\",\"category\":\"hardware\"}",
+        "pp": 56.55,
+        "prompt_count": 71,
+        "tg": 12.15,
+        "ttft_s": null,
+        "wall_s": 13.772
+      },
+      {
+        "eval_count": 153,
+        "id": "json-05",
+        "load_ms": 0.8,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-5502\",\"vendor\":\"Initech\",\"date\":\"2026-07-01\",\"total\":\"EUR 2300.75\",\"category\":\"services\"}",
+        "pp": 56.33,
+        "prompt_count": 72,
+        "tg": 11.98,
+        "ttft_s": null,
+        "wall_s": 14.129
+      },
+      {
+        "eval_count": 151,
+        "id": "json-06",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-6614\",\"vendor\":\"Umbrella KG\",\"date\":\"2026-08-09\",\"total\":\"EUR 64.40\",\"category\":\"software\"}",
+        "pp": 56.36,
+        "prompt_count": 71,
+        "tg": 11.92,
+        "ttft_s": null,
+        "wall_s": 14.011
+      },
+      {
+        "eval_count": 157,
+        "id": "json-07",
+        "load_ms": 0.9,
+        "ok": false,
+        "output": "{\"invoice\":\"INV-7721\",\"vendor\":\"Soylent LLC\",\"date\":\"2026-09-23\",\"total\":\"EUR 999.99\",\"category\":\"hardware\"}",
+        "pp": 56.64,
+        "prompt_count": 73,
+        "tg": 12.45,
+        "ttft_s": null,
+        "wall_s": 13.99
+      },
+      {
+        "eval_count": 162,
+        "id": "json-08",
+        "load_ms": 1.4,
+        "ok": false,
+        "output": "{\"invoice\": \"INV-8830\", \"vendor\": \"Hooli\", \"date\": \"2026-10-05\", \"total\": \"EUR 310.10\", \"category\": \"services\"}",
+        "pp": 59.34,
+        "prompt_count": 72,
+        "tg": 12.74,
+        "ttft_s": null,
+        "wall_s": 14.014
+      }
+    ],
+    "niah4k": [
+      {
+        "eval_count": 27,
+        "id": "niah-4k-ORBITAL-7",
+        "load_ms": 1.6,
+        "ok": true,
+        "output": "Q7-4419",
+        "pp": 108.53,
+        "prompt_count": 3745,
+        "tg": 12.21,
+        "ttft_s": null,
+        "wall_s": 36.853
+      },
+      {
+        "eval_count": 42,
+        "id": "niah-4k-HALCYON-3",
+        "load_ms": 1.1,
+        "ok": true,
+        "output": "K3-8820",
+        "pp": 732.97,
+        "prompt_count": 3745,
+        "tg": 12.04,
+        "ttft_s": null,
+        "wall_s": 8.639
+      },
+      {
+        "eval_count": 27,
+        "id": "niah-4k-MERIDIAN-9",
+        "load_ms": 1.3,
+        "ok": true,
+        "output": "M9-1274",
+        "pp": 720.83,
+        "prompt_count": 3745,
+        "tg": 11.85,
+        "ttft_s": null,
+        "wall_s": 7.519
+      }
+    ],
+    "tool": [
+      {
+        "eval_count": 30,
+        "id": "tool-01",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Berlin\"}}",
+        "pp": 77.63,
+        "prompt_count": 104,
+        "tg": 12.65,
+        "ttft_s": null,
+        "wall_s": 3.916
+      },
+      {
+        "eval_count": 47,
+        "id": "tool-02",
+        "load_ms": 1.2,
+        "ok": false,
+        "output": "The user wants me to search the web for Steam Deck OLED reviews. I have a search_web tool available. Let me use it.",
+        "pp": 86.3,
+        "prompt_count": 106,
+        "tg": 12.34,
+        "ttft_s": null,
+        "wall_s": 5.045
+      },
+      {
+        "eval_count": 41,
+        "id": "tool-03",
+        "load_ms": 1.1,
+        "ok": false,
+        "output": "The user wants me to read a file. I have a read_file tool. Let me use it.",
+        "pp": 85.73,
+        "prompt_count": 105,
+        "tg": 12.33,
+        "ttft_s": null,
+        "wall_s": 4.559
+      },
+      {
+        "eval_count": 47,
+        "id": "tool-04",
+        "load_ms": 1.7,
+        "ok": true,
+        "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"a@example.com\", \"subject\": \"Report\"}}",
+        "pp": 86.07,
+        "prompt_count": 107,
+        "tg": 12.32,
+        "ttft_s": null,
+        "wall_s": 5.068
+      },
+      {
+        "eval_count": 39,
+        "id": "tool-05",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "{\"tool\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}",
+        "pp": 85.52,
+        "prompt_count": 104,
+        "tg": 12.29,
+        "ttft_s": null,
+        "wall_s": 4.395
+      },
+      {
+        "eval_count": 41,
+        "id": "tool-06",
+        "load_ms": 1.5,
+        "ok": false,
+        "output": "{\"tool\": \"search_web\", \"arguments\": {\"query\": \"llama.cpp RPC benchmark\"}}",
+        "pp": 82.22,
+        "prompt_count": 103,
+        "tg": 12.12,
+        "ttft_s": null,
+        "wall_s": 4.641
+      },
+      {
+        "eval_count": 42,
+        "id": "tool-07",
+        "load_ms": 0.8,
+        "ok": false,
+        "output": "The user wants to read /etc/hostname. I have a read_file tool. Let me use it.",
+        "pp": 82.33,
+        "prompt_count": 104,
+        "tg": 12.48,
+        "ttft_s": null,
+        "wall_s": 4.632
+      },
+      {
+        "eval_count": 196,
+        "id": "tool-08",
+        "load_ms": 1.8,
+        "ok": true,
+        "output": "{\"tool\": \"send_email\", \"arguments\": {\"to\": \"bob@example.org\", \"subject\": \"Invoice\"}}",
+        "pp": 82.03,
+        "prompt_count": 104,
+        "tg": 12.03,
+        "ttft_s": null,
+        "wall_s": 17.572
+      }
+    ]
+  }
+}

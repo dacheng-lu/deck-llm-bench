@@ -1,0 +1,10 @@
+{
+  "label": "pplx-decider-flash",
+  "tag": "pplx-decider-flash",
+  "machine": "pc",
+  "status": "unsupported",
+  "reason": "Ollama 0.40.15 on Linux: this model requires MLX support, but the MLX runtime is not available",
+  "attempted_at": "2026-11-10T10:50:00+01:00",
+  "manifest_requires": "0.40.7",
+  "note": "The default latest and 4b tags use the same safetensors/MLX runtime. No Linux result was produced; do not report a score."
+}

@@ -1,0 +1,453 @@
+{
+  "base": "http://127.0.0.1:11434",
+  "elapsed_s": 249.1,
+  "label": "lfm3-1.7b",
+  "machine": "deck",
+  "model": "lfm3",
+  "model_info": {
+    "details": {
+      "context_length": 262144,
+      "embedding_length": 2048,
+      "families": [
+        "lfm3"
+      ],
+      "family": "lfm3",
+      "format": "gguf",
+      "parameter_size": "1.7B",
+      "parent_model": "LFM3-1.7B-Q4_K_M.gguf",
+      "quantization_level": "Q4_K_M",
+      "runner": "llamacpp"
+    },
+    "digest": "b36a103fe2f8fbe9df2ceec88b9cfdf842dc04aaabe2b4677d1acf8e16570b5d",
+    "name": "lfm3:latest",
+    "size_gb": 1.1
+  },
+  "started_at": 1794305726.215,
+  "summary": {
+    "code": {
+      "n": 4,
+      "ok": 4,
+      "pct": 100.0,
+      "pp_mean": 192.07,
+      "tg_mean": 44.58,
+      "wall_mean": 6.77
+    },
+    "if": {
+      "n": 8,
+      "ok": 8,
+      "pct": 100.0,
+      "pp_mean": 138.4,
+      "tg_mean": 45.44,
+      "wall_mean": 3.25
+    },
+    "json": {
+      "n": 8,
+      "ok": 2,
+      "pct": 25.0,
+      "pp_mean": 338.3,
+      "tg_mean": 45.33,
+      "wall_mean": 16.37
+    },
+    "macro_pct": 45.0,
+    "niah4k": {
+      "n": 3,
+      "ok": 0,
+      "pct": 0.0,
+      "pp_mean": 1489.38,
+      "tg_mean": 47.92,
+      "wall_mean": 5.0
+    },
+    "tool": {
+      "n": 8,
+      "ok": 0,
+      "pct": 0.0,
+      "pp_mean": 344.91,
+      "tg_mean": 44.12,
+      "wall_mean": 6.25
+    }
+  },
+  "tasks": {
+    "code": [
+      {
+        "eval_count": 88,
+        "id": "code-add",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "```python\ndef add(a, b):\n    return a + b\n```",
+        "pp": 199.72,
+        "prompt_count": 30,
+        "tg": 44.31,
+        "ttft_s": null,
+        "wall_s": 2.148
+      },
+      {
+        "eval_count": 153,
+        "id": "code-sql",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "```sql\nSELECT name FROM users WHERE age > 18;\n```",
+        "pp": 208.78,
+        "prompt_count": 32,
+        "tg": 43.29,
+        "ttft_s": null,
+        "wall_s": 3.698
+      },
+      {
+        "eval_count": 443,
+        "id": "code-reverse",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "```python\ns[::-1]\n```",
+        "pp": 171.58,
+        "prompt_count": 26,
+        "tg": 44.53,
+        "ttft_s": null,
+        "wall_s": 10.112
+      },
+      {
+        "eval_count": 507,
+        "id": "code-email",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+        "pp": 188.22,
+        "prompt_count": 28,
+        "tg": 46.2,
+        "ttft_s": null,
+        "wall_s": 11.134
+      }
+    ],
+    "if": [
+      {
+        "eval_count": 71,
+        "id": "if-exact-en",
+        "load_ms": 3976.1,
+        "ok": true,
+        "output": "OK",
+        "pp": 36.07,
+        "prompt_count": 15,
+        "tg": 43.62,
+        "ttft_s": null,
+        "wall_s": 6.027
+      },
+      {
+        "eval_count": 63,
+        "id": "if-arith",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "391",
+        "pp": 166.24,
+        "prompt_count": 25,
+        "tg": 43.05,
+        "ttft_s": null,
+        "wall_s": 1.623
+      },
+      {
+        "eval_count": 106,
+        "id": "if-zh-capital",
+        "load_ms": 0.7,
+        "ok": true,
+        "output": "法国的首都是巴黎。",
+        "pp": 153.52,
+        "prompt_count": 23,
+        "tg": 43.47,
+        "ttft_s": null,
+        "wall_s": 2.599
+      },
+      {
+        "eval_count": 79,
+        "id": "if-de-exact",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "Berlin",
+        "pp": 118.02,
+        "prompt_count": 17,
+        "tg": 47.64,
+        "ttft_s": null,
+        "wall_s": 1.813
+      },
+      {
+        "eval_count": 71,
+        "id": "if-translate",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "Guten Morgen",
+        "pp": 163.2,
+        "prompt_count": 23,
+        "tg": 48.39,
+        "ttft_s": null,
+        "wall_s": 1.617
+      },
+      {
+        "eval_count": 106,
+        "id": "if-json",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "{\n  \"a\": 1,\n  \"b\": 2\n}",
+        "pp": 181.54,
+        "prompt_count": 26,
+        "tg": 45.3,
+        "ttft_s": null,
+        "wall_s": 2.491
+      },
+      {
+        "eval_count": 256,
+        "id": "if-list",
+        "load_ms": 0.8,
+        "ok": true,
+        "output": "We need to list three primary colors, comma separated, and no other text. The user asks: \"List three primary colors, comma separated, no other text.\" So we just output the three primary colors as a comma-separated list.\n\nBut which set of primary colors? Typically in art and design, there are different sets: RGB (red, green, blue), RYB (red, yellow, blue) for traditional art, etc. The question doesn't specify. Usually when someone says \"primary colors\" without qualification, they might refer to t",
+        "pp": 149.48,
+        "prompt_count": 22,
+        "tg": 47.32,
+        "ttft_s": null,
+        "wall_s": 5.568
+      },
+      {
+        "eval_count": 176,
+        "id": "if-summary",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "The Steam Deck is Valve’s handheld gaming computer that runs Linux and can also execute local language models.",
+        "pp": 139.15,
+        "prompt_count": 43,
+        "tg": 44.69,
+        "ttft_s": null,
+        "wall_s": 4.259
+      }
+    ],
+    "json": [
+      {
+        "eval_count": 768,
+        "id": "json-01",
+        "load_ms": 0.6,
+        "ok": true,
+        "output": "{\n  \"invoice\": \"INV-1042\",\n  \"vendor\": \"Acme GmbH\",\n  \"date\": \"2026-03-04\",\n  \"total\": 1299.50,\n  \"category\": \"hardware\"\n}",
+        "pp": 345.08,
+        "prompt_count": 66,
+        "tg": 46.18,
+        "ttft_s": null,
+        "wall_s": 16.832
+      },
+      {
+        "eval_count": 768,
+        "id": "json-02",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "{\n  \"invoice\": \"INV-2087\",\n  \"vendor\": \"Northwind Ltd\",\n  \"date\": \"2026-04-12\",\n  \"total\": 87.25,\n  \"category\": \"software\"",
+        "pp": 364.37,
+        "prompt_count": 65,
+        "tg": 46.69,
+        "ttft_s": null,
+        "wall_s": 16.641
+      },
+      {
+        "eval_count": 768,
+        "id": "json-03",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "We need to extract invoice fields as JSON only, with exactly these keys: invoice, vendor, date, total, category.\n\nGiven text: \"Invoice INV-3311 from Contoso AG, dated 2026-05-30, total EUR 450.00, category services.\"\n\nInterpretation:\n- invoice: likely \"INV-3311\" or maybe \"INV-3311\"? The phrase \"Invoice INV-3311 from Contoso AG\" suggests invoice number is INV-3311.\n- vendor: \"Contoso AG\"\n- date: \"2026-05-30\"\n- total: \"EUR 450.00\" -> probably numeric value? Should we include currency? Usually total field might be a string like \"450.00 EUR\" or just number. Let's parse: \"total EUR 450.00\". So tota",
+        "pp": 325.65,
+        "prompt_count": 65,
+        "tg": 41.91,
+        "ttft_s": null,
+        "wall_s": 18.544
+      },
+      {
+        "eval_count": 768,
+        "id": "json-04",
+        "load_ms": 1.2,
+        "ok": false,
+        "output": "We need to extract invoice fields as JSON only, with exactly these keys: invoice, vendor, date, total, category.\n\nGiven text: \"Invoice INV-4420 from Globex Inc, dated 2026-06-18, total EUR 12.99, category hardware.\"\n\nInterpretation:\n- invoice: likely \"INV-4420\" or maybe \"INV-4420\"? The phrase \"Invoice INV-4420\" suggests invoice number is INV-4420.\n- vendor: \"Globex Inc\"\n- date: \"2026-06-18\"\n- total: \"EUR 12.99\" -> probably numeric value? Should we include currency? Usually total field might be a string like \"12.99 EUR\" or just number. Let's parse: \"total EUR 12.99\". So total = 12.99 (maybe wit",
+        "pp": 329.98,
+        "prompt_count": 65,
+        "tg": 41.68,
+        "ttft_s": null,
+        "wall_s": 18.644
+      },
+      {
+        "eval_count": 481,
+        "id": "json-05",
+        "load_ms": 0.7,
+        "ok": true,
+        "output": "{\n  \"invoice\": \"INV-5502\",\n  \"vendor\": \"Initech\",\n  \"date\": \"2026-07-01\",\n  \"total\": 2300.75,\n  \"category\": \"services\"\n}",
+        "pp": 324.57,
+        "prompt_count": 66,
+        "tg": 42.99,
+        "ttft_s": null,
+        "wall_s": 11.408
+      },
+      {
+        "eval_count": 768,
+        "id": "json-06",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "We need to extract invoice fields as JSON only, with exactly these keys: invoice, vendor, date, total, category.\n\nGiven text: \"Invoice INV-6614 from Umbrella KG, dated 2026-08-09, total EUR 64.40, category software.\"\n\nInterpretation:\n- invoice: likely \"INV-6614\" or maybe \"INV-6614\"? The key is \"invoice\". So value should be the invoice number.\n- vendor: \"Umbrella KG\"\n- date: \"2026-08-09\"\n- total: \"EUR 64.40\" but probably just numeric? It says total EUR 64.40. Could be string \"64.40\" or include currency? Usually total field might be a number. We'll see. Let's parse: \"total EUR 64.40\". So total =",
+        "pp": 337.33,
+        "prompt_count": 65,
+        "tg": 46.58,
+        "ttft_s": null,
+        "wall_s": 16.694
+      },
+      {
+        "eval_count": 768,
+        "id": "json-07",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "We need to extract invoice fields as JSON only, with exactly these keys: invoice, vendor, date, total, category.\n\nGiven text: \"Invoice INV-7721 from Soylent LLC, dated 2026-09-23, total EUR 999.99, category hardware.\"\n\nInterpretation:\n- invoice: likely \"INV-7721\" or maybe \"INV-7721\"? The key is \"invoice\". So value should be the invoice number.\n- vendor: \"Soylent LLC\"\n- date: \"2026-09-23\"\n- total: \"EUR 999.99\" but probably just numeric? It says total EUR 999.99. Could be string \"999.99\" or include currency? Usually total field might be a number. But we can keep as given: \"999.99\" or \"EUR 999.99",
+        "pp": 328.04,
+        "prompt_count": 65,
+        "tg": 48.61,
+        "ttft_s": null,
+        "wall_s": 16.02
+      },
+      {
+        "eval_count": 768,
+        "id": "json-08",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "We need to extract invoice fields as JSON only, with exactly these keys: invoice, vendor, date, total, category.\n\nGiven text: \"Invoice INV-8830 from Hooli, dated 2026-10-05, total EUR 310.10, category services.\"\n\nInterpretation:\n- invoice: likely \"INV-8830\" or maybe \"INV-8830\"? The phrase \"Invoice INV-8830 from Hooli...\" So invoice number is INV-8830.\n- vendor: \"Hooli\"\n- date: \"2026-10-05\"\n- total: \"EUR 310.10\" -> probably numeric value 310.10, but include currency? Usually total field might be a string or number. We'll see.\n- category: \"services\"\n\nThus JSON object with keys: invoice, vendor, ",
+        "pp": 351.36,
+        "prompt_count": 65,
+        "tg": 47.96,
+        "ttft_s": null,
+        "wall_s": 16.211
+      }
+    ],
+    "niah4k": [
+      {
+        "eval_count": 64,
+        "id": "niah-4k-ORBITAL-7",
+        "load_ms": 0.9,
+        "ok": false,
+        "output": "We need to parse the user input. The user says: \"Read the text and answer with the access code only.\" Then they provide a huge block of text that repeats many times about an archive records routine ma",
+        "pp": 555.63,
+        "prompt_count": 3876,
+        "tg": 48.08,
+        "ttft_s": null,
+        "wall_s": 8.335
+      },
+      {
+        "eval_count": 64,
+        "id": "niah-4k-HALCYON-3",
+        "load_ms": 0.9,
+        "ok": false,
+        "output": "We need to parse the user input. The user says: \"Read the text and answer with the access code only.\" Then they provide a huge block of text that repeats many times about an archive records routine ma",
+        "pp": 1949.18,
+        "prompt_count": 3877,
+        "tg": 47.77,
+        "ttft_s": null,
+        "wall_s": 3.344
+      },
+      {
+        "eval_count": 64,
+        "id": "niah-4k-MERIDIAN-9",
+        "load_ms": 1.0,
+        "ok": false,
+        "output": "We need to parse the user input. The user says: \"Read the text and answer with the access code only.\" Then they provide a huge block of text that repeats many times about an archive records routine ma",
+        "pp": 1963.34,
+        "prompt_count": 3876,
+        "tg": 47.9,
+        "ttft_s": null,
+        "wall_s": 3.325
+      }
+    ],
+    "tool": [
+      {
+        "eval_count": 182,
+        "id": "tool-01",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "{\"tool\": \"get_weather\", \"arguments\": [\"Berlin\"]}",
+        "pp": 263.53,
+        "prompt_count": 104,
+        "tg": 45.19,
+        "ttft_s": null,
+        "wall_s": 4.475
+      },
+      {
+        "eval_count": 146,
+        "id": "tool-02",
+        "load_ms": 0.6,
+        "ok": false,
+        "output": "{\n  \"tool\": \"search_web\",\n  \"arguments\": [\"Steam Deck OLED reviews\"]\n}",
+        "pp": 382.45,
+        "prompt_count": 107,
+        "tg": 47.94,
+        "ttft_s": null,
+        "wall_s": 3.335
+      },
+      {
+        "eval_count": 262,
+        "id": "tool-03",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "{\n  \"tool\": \"read_file\",\n  \"arguments\": [\n    \"/tmp/notes.txt\"\n  ]\n}",
+        "pp": 369.55,
+        "prompt_count": 105,
+        "tg": 46.83,
+        "ttft_s": null,
+        "wall_s": 5.889
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-04",
+        "load_ms": 0.8,
+        "ok": false,
+        "output": "We need to parse the user's request. The user says: \"Tools: [{\"name\": \"get_weather\", \"args\": [\"city\"]}, {\"name\": \"search_web\", \"args\": [\"query\"]}, {\"name\": \"read_file\", \"args\": [\"path\"]}, {\"name\": \"send_email\", \"args\": [\"to\", \"subject\"]} ] Choose one tool for the request and reply with JSON only: {\"tool\": \"<name>\", \"arguments\": {...}}. Request: Send an email to a@example.com with subject Report\"\n\nSo we need to pick the appropriate tool from the list. The request is to send an email to a@example.",
+        "pp": 356.42,
+        "prompt_count": 107,
+        "tg": 42.15,
+        "ttft_s": null,
+        "wall_s": 7.904
+      },
+      {
+        "eval_count": 257,
+        "id": "tool-05",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "{\n  \"tool\": \"get_weather\",\n  \"arguments\": [\"Tokyo\"]\n}",
+        "pp": 354.99,
+        "prompt_count": 104,
+        "tg": 42.45,
+        "ttft_s": null,
+        "wall_s": 6.364
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-06",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "We need to parse the user's request. The user gives tools: \n- get_weather (args: city)\n- search_web (args: query)\n- read_file (args: path)\n- send_email (args: to, subject)\n\nThe request is: \"Search for llama.cpp RPC benchmarks\"\n\nWe need to choose one tool from the list that can accomplish this. Among them:\n- get_weather is irrelevant.\n- search_web takes a query string. That seems appropriate for searching web for \"llama.cpp RPC benchmarks\".\n- read_file is for reading files, not relevant.\n- send_e",
+        "pp": 347.62,
+        "prompt_count": 105,
+        "tg": 42.76,
+        "ttft_s": null,
+        "wall_s": 7.798
+      },
+      {
+        "eval_count": 264,
+        "id": "tool-07",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "{\n  \"tool\": \"read_file\",\n  \"arguments\": [\n    \"/etc/hostname\"\n  ]\n}",
+        "pp": 346.94,
+        "prompt_count": 105,
+        "tg": 42.72,
+        "ttft_s": null,
+        "wall_s": 6.496
+      },
+      {
+        "eval_count": 320,
+        "id": "tool-08",
+        "load_ms": 0.7,
+        "ok": false,
+        "output": "We need to parse the user's request. The user says: \"Tools: [{\"name\": \"get_weather\", \"args\": [\"city\"]}, {\"name\": \"search_web\", \"args\": [\"query\"]}, {\"name\": \"read_file\", \"args\": [\"path\"], {\"name\": \"send_email\", \"args\": [\"to\", \"subject\"]}}\" Actually let's read carefully:\n\nThe provided tools list:\n- get_weather (args: city)\n- search_web (args: query)\n- read_file (args: path)\n- send_email (args: to, subject)\n\nBut the request is: \"Email bob@example.org about the invoice\"\n\nSo we need to choose one too",
+        "pp": 337.79,
+        "prompt_count": 104,
+        "tg": 42.93,
+        "ttft_s": null,
+        "wall_s": 7.775
+      }
+    ]
+  }
+}
